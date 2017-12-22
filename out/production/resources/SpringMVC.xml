@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="cn.stevenjack.dormitory.Controller">
+        <!--springMVC配置 只扫描以下包-->
+        <context:include-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="annotation"
+                                expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+    </context:component-scan>
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/views/"
+          p:suffix=".jsp"/>
+
+    <!--<mvc:annotation-driven/>-->
+    <!--打开default-servlet-handler在springMVC找不到对应的映射时会采用默认映射-->
+    <mvc:default-servlet-handler/>
+
+
+    <!--直达相应页面，不经过SpringMVC映射-->
+    <!--<mvc:view-controller path="test" view-name="list"/>-->
+
+    <!--上传文件需要注册 还有其他配置-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+          p:defaultEncoding="UTF-8"/>
+
+    <!--注册拦截器-->
+    <!--<mvc:interceptors>
+        <bean class="AuthInterceptor"/>
+    </mvc:interceptors>
+
+    <mvc:interceptors>
+        <bean class="AuthorityByRole"/>
+    </mvc:interceptors>-->
+
+    <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="false">
+            <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes" value="text/plain;charset=UTF-8"/>
+            </bean>
+            <!--避免IE执行AJAX时,返回JSON出现下载文件-->
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="supportedMediaTypes" value="application/json;charset=UTF-8"/>
+                <property name="objectMapper" ref="jacksonObjectMapper"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <bean id="jacksonObjectMapper" class="cn.stevenjack.dormitory.Config.JsonMapper"/>
+
+    <!-- shiro为集成spring -->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="org.apache.shiro.authz.UnauthorizedException">/403.jsp</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- AOP式方法级权限检查 -->
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+          depends-on="lifecycleBeanPostProcessor"
+          p:proxyTargetClass="true"/>
+
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <!--静态资源映射 设置Cache-Control头，缓存时间为365天-->
+    <!--生产环境-->
+    <beans profile="production">
+        <mvc:resources mapping="/assets/**" location="/assets/">
+            <mvc:cache-control max-age="31536000" cache-public="true"/>
+        </mvc:resources>
+    </beans>
+
+</beans>

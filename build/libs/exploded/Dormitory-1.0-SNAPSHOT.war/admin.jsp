@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="assets/img/logo.png">
-    <title>校园快递后台管理系统</title>
+    <title>华理宿舍管理系统</title>
     <%@include file="admin_css.jsp" %>
 </head>
 <body class="pace-done">
