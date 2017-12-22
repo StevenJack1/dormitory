@@ -1,0 +1,127 @@
+﻿@charset "utf-8";
+
+input[type="text"]:focus,input[type="password"]:focus{
+  outline:0;
+  -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 4px rgba(82,168,236,0.8);
+  -moz-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 4px rgba(82,168,236,0.8);
+  box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 4px rgba(82,168,236,0.8)
+}
+
+.header a{position:absolute; top:60px; right:50px; font-size:12px; color:#666; height:20px; line-height:20px;background:url(../img/iphone.png) -25px -290px no-repeat; text-indent:20px;}
+.header a:hover{color:#009fe3;}
+.header h3{position:absolute; top:56px; left:214px; height:24px; font:18px/24px 'Microsoft YaHei'; border-left:1px solid #afafaf; padding:0 12px;}
+
+.register_content{width:1200px; margin:0 auto; position:relative;}
+.step_ul{padding:0 40px; margin-top:32px; height:64px; background:url(../img/iphone.png) 0 -314px no-repeat;}
+.step1{padding:0 40px; height:64px; background:url(../img/iphone.png) center -381px no-repeat;}
+.step2{padding:0 40px; height:64px; background:url(../img/iphone.png) center -314px no-repeat;}
+.step_ul li{float:left; width:540px; height:64px; text-align:center; font:bold 16px/64px '宋体'; color:#fff;}
+.step1 .li1{background:#009fe3;}
+.step1 .li2{background:#d1d1d1; margin-left:40px;}
+.step2 .li1{background:#d1d1d1;}
+.step2 .li2{background:#009fe3; margin-left:40px;}
+
+#register_form{padding:60px 40px 88px 40px;}
+.div_form{height:48px; margin-bottom:24px;}
+.div_form label{float:left; width:146px; font-size:14px; color:#333; text-align:right; height:48px; line-height:48px;}
+.div_form .input_div{float:left; width:620px;}
+#userName,#phoneNumber,#password1,#password2,#varcode{width:308px; height:26px;line-height:26px;padding:10px 5px; border:1px solid #aeaeae; border-radius:4px; color:#666;}
+.input_div span{ margin-left:6px;}
+#btn, .btn2, .success_login, .login_btn{width:460px; height:60px; text-align:center; font:bold 16px/60px '宋体'; border:0 none; border-radius:4px; color:#fff; cursor:pointer; background:#009fe3;letter-spacing:6px;}
+#btn{width:320px;}
+#btn:hover, .btn2:hover, .success_login:hover,.login_btn:hover{background:#0697d5;}
+.code_img{width:70px; height:48px;}
+.change{color:#666; text-decoration:underline; margin-left:10px;}
+input_div5 span{background:0 none;}
+.check2{background:url(../img/check2.png) no-repeat; padding-left:22px; padding-bottom:4px;}
+.check1{background:url(../img/check1.png) no-repeat; padding-left:22px; padding-bottom:4px;}
+
+.reg_login{width:270px; height:240px; border:2px solid #e1e1e1; border-top:2px solid #0089e1; position:absolute; top:190px; right:40px; background:url(../img/smile.png) center 35px no-repeat;}
+.btn2{position:absolute; left:50px; top:160px; width:170px; height:38px; line-height:38px;}
+.reg_login p{text-align:center; margin-top:130px; line-height:20px;}
+
+/*注册成功*/
+.success{height:65px; width:220px; background:url(../img/success.png) no-repeat; font:16px/65px '宋体'; text-indent:76px; margin:75px auto 45px;}
+
+.success_login{display:block; width:460px; margin:0 auto; margin-bottom:130px;}
+
+/*login*/
+.form{width:1200px; margin:0 auto;position:relative;}
+#login_form{width:350px; position:absolute; top:130px; right:70px;}
+#login_form h2{background:url(../img/iphone.png) left -452px no-repeat; padding-left:46px; color:#009fe3; font-size:16px; font-weight:bold; height:20px; line-height:20px; margin-bottom:24px;}
+
+.username, .pw{width:290px; padding:10px 5px 10px 45px; border:1px solid #009fe3; height:20px; line-height:20px; margin-bottom:10px; border-radius:4px; color:#666;}
+.div_user, .div_pw{position:relative;}
+.div_user span, .div_pw span{position:absolute; left:15px; top:12px; width:16px; height:18px; background:url(../img/iphone.png) 0 -480px no-repeat; z-index:1;}
+.div_pw span{background-position:0 -506px;}
+
+.div_box{margin-top:5px; height:20px; line-height:20px; position:relative;}
+.div_box a, .login_reg{position:absolute; right:5px;; top:0; color:#009fe3;}
+.login_reg{font-weight:bold;}
+.div_box a:hover, .login_reg:hover{text-decoration:underline;}
+.div_box input{position:absolute; top:4px; left:0;}
+
+.login_btn{display:block; width:340px;box-shadow:0 2px 1px #999; margin-top:20px;}
+#login_form h4{height:40px; line-height:40px; position:relative;}
+.form .button{position:absolute; left:135px; top:179px; width:190px; height:40px;text-align:center; line-height:40px; font-size:16px; color:#009fe3; font-weight:bold;}
+
+
+
+/*header*/
+#header,#menu{width:100%; min-width:1200px; background:#fff;}
+.header{width:1200px; margin:0 auto; height:100px; line-height:100px; padding-top:15px; position:relative;}
+.header h1{width:200px; height:40px; background:url(../img/logo.jpg) 0 0 no-repeat; position:absolute; left:0; top:40px; text-indent:-999em; }
+.header ul{position:absolute; right:0; top:44px; width:320px;}
+.header ul li{float:left;}
+.header ul li a{display:block;height:32px; line-height:32px;}
+.index_login a, .index_reg a{background:#009fe3; color:#fff; border-radius:14px; width:90px; box-shadow:0 2px 1px #999; text-align:center; font-weight:bold; letter-spacing:6px;}
+.index_reg a{background:#f87e5a; margin:0 30px 0 15px;}
+.index_login a:hover{background:#0897d5;}
+.index_reg a:hover{background:#f56a40;}
+
+/*menu*/
+#menu{background:#009fe3; box-shadow:0 0 1px #aaa; position:relative; z-index:9;}
+.menu{width:1200px; margin:0 auto; height:84px;}
+.menu li{float:left; width:199px; border-left:1px solid #fffefe;}
+.menu li a{display:block; line-height:20px; text-align:center; color:#fff; height:40px; padding:22px 0;}
+.menu li a strong{font-size:16px; font-weight:bold;}
+.menu li a span{font-size:14px; font-family:'Microsoft Yahei';}
+.menu li a:hover{background:#0087c0;}
+.menu .tools{border-right:1px solid #fffefe; width:198px; position:relative;}
+.menu .tools a{background:#0087c0;}
+.menu .tools em{background:url(../img/iphone.png) 0 -232px no-repeat; position:absolute; right:52px; top:25px; width:12px; height:12px;}
+.tools .tool_select{width:198px; background:#0087c0; position:absolute; top:84px; right:0; display:none;}
+.tools .tool_select a{display:block; height:40px; line-height:40px; padding:0 0 0 70px; text-align:left;}
+.tools .tool_select a:hover{background:#0c81b2;}
+
+.friendLink{position:absolute; top:86px; left:30px; font-size:12px;}
+.friendLink a{color:#009fe3; float:left; margin-right:30px;}
+.friendLink a:hover{text-decoration:underline;}
+
+
+html,body,ul,li,p,h1,h2,h3,h4,h5,h6,input,form,dd,dt,dl,ol,caption,td,tr,th,hr{padding:0; margin:0;}
+html{height:100%; width:100%;}
+body{background:#fff; width:100%; font-size:12px; font-family:tahoma,arial,宋体,sans-serif; color:#666;}
+a{text-decoration:none;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6,em,i,b,strong{font-weight:normal; font-style:normal;}
+table,div,img{border-collapse:collapse;border-spacing:0;}
+img{border:0;vertical-align:middle;}
+button,input,select,textarea{font-size:100%; outline:0;}
+:focus{outline:0;}
+textarea{overflow:auto; vertical-align:top; resize:none;}
+button, input[type="button"], input[type="reset"], input[type="submit"]{cursor:pointer;-webkit-appearance: button; *overflow: visible;}
+.clear{zoom:1;}
+.clear:after{content:''; display:block; clear:both;}
+
+
+
+
+
+
+
+
+
+
+
+

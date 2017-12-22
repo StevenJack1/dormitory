@@ -1,0 +1,202 @@
+group "smart-java"
+version "1.0-SNAPSHOT"
+
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        jcenter()
+        mavenCentral()
+        maven { url "http://repo.spring.io/release" }
+        maven { url "https://repo.spring.io/libs-snapshot" }
+    }
+    dependencies {
+    }
+}
+
+
+apply plugin: "java"
+apply plugin: "war"
+apply plugin: "jacoco"
+apply plugin: "idea"
+
+war {
+    baseName = "Dormitory"
+}
+
+configurations {
+    providedRuntime
+}
+
+jacoco {
+    toolVersion = "0.7.9"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+def SpringVersion = "4.3.8.RELEASE"
+def HibernateVersion = "5.2.4.Final"
+def ShiroVersion = "1.4.0"
+def JacksonVersion = "2.8.4"
+def POIVersion = "3.16"
+
+repositories {
+    mavenLocal()
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    jcenter()
+    mavenCentral()
+    maven { url "http://repo.spring.io/release" }
+    maven { url "https://repo.spring.io/libs-snapshot" }
+}
+
+dependencies {
+    compile(
+
+            // spring framework
+            "org.springframework:spring-context:${SpringVersion}",
+            "org.springframework:spring-context-support:${SpringVersion}",//启用ehcache缓存
+            "org.springframework:spring-web:${SpringVersion}",
+            "org.springframework:spring-webmvc:${SpringVersion}",
+            "org.springframework:spring-test:${SpringVersion}",
+            "org.springframework:spring-beans:${SpringVersion}",
+            "org.springframework:spring-expression:${SpringVersion}",
+            "org.springframework:spring-aop:${SpringVersion}",
+            "org.springframework:spring-aspects:${SpringVersion}",
+            "org.springframework:spring-core:${SpringVersion}",
+            "org.springframework:spring-instrument:${SpringVersion}",
+            "org.springframework:spring-orm:${SpringVersion}",
+
+            "javax.servlet:javax.servlet-api:3.1.0",
+
+            //Spring-Session
+            "org.springframework.session:spring-session:1.3.1.RELEASE",
+            "org.springframework.data:spring-data-redis:1.8.3.RELEASE",
+
+            //jedis
+            "redis.clients:jedis:2.9.0",
+            "org.apache.commons:commons-pool2:2.4.2",
+
+            //apache
+            "commons-fileupload:commons-fileupload:1.3.2",
+            "org.apache.commons:commons-lang3:3.4",//深拷贝
+
+            // MySQL
+            "mysql:mysql-connector-java:6.0.4",
+
+            //Hibernate
+            "org.hibernate:hibernate-core:${HibernateVersion}",
+            "org.hibernate:hibernate-validator:5.4.1.Final",
+
+            //ehcache
+            "org.ehcache:ehcache:3.3.1",
+            "org.hibernate:hibernate-ehcache:${HibernateVersion}",
+
+            //C3P0
+            "com.mchange:c3p0:0.9.5.2",
+            "org.hibernate:hibernate-c3p0:${HibernateVersion}",
+
+            //shiro
+            "org.apache.shiro:shiro-core:${ShiroVersion}",
+            "org.apache.shiro:shiro-spring:${ShiroVersion}",
+            "org.apache.shiro:shiro-web:${ShiroVersion}",
+            "org.apache.shiro:shiro-ehcache:${ShiroVersion}",
+
+            //Lombok
+            "org.projectlombok:lombok:1.16.16",
+
+            //slf4j
+            "ch.qos.logback:logback-classic:1.1.7",
+
+            //@NotNull
+            "org.jetbrains:annotations:15.0",
+
+            //Groovy
+            "org.codehaus.groovy:groovy:2.4.7",
+
+            //JSON
+            "com.fasterxml.jackson.core:jackson-core:${JacksonVersion}",
+            "com.fasterxml.jackson.core:jackson-databind:${JacksonVersion}",
+            "com.fasterxml.jackson.core:jackson-annotations:${JacksonVersion}",
+
+            //POI
+            "org.apache.poi:poi:$POIVersion",
+            "org.apache.poi:poi-ooxml:$POIVersion",
+            "org.apache.poi:poi-scratchpad:$POIVersion",
+            "org.apache.poi:poi-ooxml-schemas:$POIVersion",
+            "org.apache.xmlbeans:xmlbeans:2.6.0",
+            "org.apache.poi:poi-excelant:$POIVersion",
+
+            //UEditor
+            "cn.songxinqiang:com.baidu.ueditor:1.1.2-offical",
+    )
+    compile("org.docx4j:docx4j-export-fo:3.3.1") {
+        exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+        exclude group: 'log4j', module: 'log4j'
+    }
+    testCompile(
+            //jUnit
+            "junit:junit:4.12",
+
+            //Mockito
+            "org.mockito:mockito-core:2.2.1",
+    )
+}
+
+task copyJars(type: Copy) {
+    from configurations.runtime
+    into "lib" //复制到lib目录
+}
+
+//让gradle支持中文
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+test {
+    useJUnit()
+
+    jacoco {
+        destinationFile = file("$buildDir/jacoco/test.exec")
+    }
+}
+
+tasks.withType(Test) {
+    testLogging {
+        // set options for log level LIFECYCLE
+        events "passed", "skipped", "failed", "standardOut"
+        showExceptions true
+        exceptionFormat "full"
+        showCauses true
+        showStackTraces true
+
+        // set options for log level DEBUG and INFO
+        debug {
+            events "started", "passed", "skipped", "failed", "standardOut", "standardError"
+            exceptionFormat "full"
+        }
+        info.events = debug.events
+        info.exceptionFormat = debug.exceptionFormat
+
+        afterSuite { desc, result ->
+            if (!desc.parent) { // will match the outermost suite
+                def output = "结果: ${result.resultType} (${result.testCount} 个测试, ${result.successfulTestCount} 个成功, ${result.failedTestCount} 个失败, ${result.skippedTestCount} 个跳过)"
+                def repeatLength = output.length()
+                println('\n' + ('——' * repeatLength) + '\n' + output + '\n' + ('——' * repeatLength))
+            }
+        }
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
+    }
+}
+
+build.dependsOn jacocoTestReport
+
+task integrationTest(type: Test) {
+    include "test/java/**"
+}

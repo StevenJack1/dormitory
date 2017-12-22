@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dormitory.iml" filepath="$PROJECT_DIR$/.idea/modules/dormitory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dormitory_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dormitory_main.iml" group="dormitory" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dormitory_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dormitory_test.iml" group="dormitory" />
+    </modules>
+  </component>
+</project>
