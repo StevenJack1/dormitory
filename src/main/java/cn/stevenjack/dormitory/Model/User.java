@@ -73,6 +73,12 @@ public class User implements Serializable{
     @JoinColumn(name = "dormitoryInfo")
     private DormitoryInfo dormitoryInfo;
 
+    @Setter
+    @Getter
+    @OneToOne
+    @JoinColumn(name = "paymentInfo")
+    private PaymentInfo paymentInfo;
+
     // 联系方式
     @Getter
     @Setter

@@ -23,10 +23,13 @@
                         <div class=" m-b-xs col-lg-6">
                             <select class="input-sm   " title="请选择来源" id="theWay">
                                 <option value="信息工程学院">信息工程学院</option>
+
                                 <option value="化学工程学院">化学工程学院</option>
                                 <option value="外国语学院">外国语学院</option>
                                 <option value="理学院">理学院</option>
                                 <option value="管理学院">管理学院</option>
+
+
                             </select>
                             <%--&nbsp;--%>
                             <%--<select class="input-sm   " title="请选择订单状态" id="packageStatus">--%>
@@ -45,7 +48,11 @@
                         <table class="table table-striped" >
                             <thead id="tableTop">
                             <tr>
-
+                                <th>宿舍楼名称</th>
+                                <th>宿舍名称</th>
+                                <th>宿舍类型</th>
+                                <th>床铺剩余数量</th>
+                                <th>操作</th>
                             </tr>
                             </thead>
                             <tbody id="packageList">

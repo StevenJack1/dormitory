@@ -37,11 +37,6 @@ public class PaymentInfo implements Serializable{
     @Setter
     private String paymentProjectName;
 
-    // 缴费人姓名
-    @Getter
-    @Setter
-    private String paymentName;
-
     // 缴费金额
     @Getter
     @Setter
