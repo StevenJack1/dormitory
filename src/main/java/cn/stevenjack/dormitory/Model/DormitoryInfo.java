@@ -35,7 +35,7 @@ public class DormitoryInfo implements Serializable{
     @GenericGenerator(name = "generator",strategy = "increment")
     private Integer id;
 
-    // 住宿楼号
+    // 楼号
     @Getter
     @Setter
     private String buildNumber;
@@ -60,6 +60,14 @@ public class DormitoryInfo implements Serializable{
     @OneToMany(mappedBy = "dormitoryInfo",cascade = CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.EXTRA)
     private List<User> userList;
+
+    public DormitoryInfo(String buildNumber,String dormitoryNumber,String dormitoryType,int bedNumber,List<User> userList){
+        this.buildNumber = buildNumber;
+        this.dormitoryNumber = dormitoryNumber;
+        this.dormitoryType = dormitoryType;
+        this.bedNumber = bedNumber;
+        this.userList = userList;
+    }
 
     @JsonIgnore
     public List<User> getUserList(){

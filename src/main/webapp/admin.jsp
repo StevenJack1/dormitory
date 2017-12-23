@@ -36,9 +36,9 @@
                                     </span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a href="#" data-toggle="modal"
-                                   data-target="#myModal1" id="change">修改个人资料</a>
-                            </li>
+                            <%--<li><a href="#" data-toggle="modal"--%>
+                                   <%--data-target="#myModal1" id="change">修改个人资料</a>--%>
+                            <%--</li>--%>
                             <li><a href="#" data-toggle="modal"
                                    data-target="#myModal2" id="changePassWord">修改密码</a>
                             </li>
@@ -47,35 +47,23 @@
                         </ul>
                     </div>
                     <div class="logo-element">
-                        <strong>镖</strong>
+                        <strong>宿舍</strong>
                     </div>
                 </li>
                 <li class="li">
-                    <a href="#" url="/UserManagement/" class="redirect"><i class="fa fa-users"></i><span class="nav-label">用户管理</span> </a>
+                    <a href="#" url="/DormitoryManagement/" class="redirect"><i class="fa fa-home" aria-hidden="true"></i><span class="nav-label">宿舍管理</span> </a>
                 </li>
                 <li class="li">
-                    <a href="#" url="/VerifyManagement/" class="redirect"><i class="fa fa-check-circle-o"></i> <span class="nav-label">学生认证</span> </a>
+                    <a href="#" url="/StudentManagement/" class="redirect"><i class="fa fa-user-plus" aria-hidden="true"></i><span class="nav-label">学生管理</span> </a>
                 </li>
                 <li class="li">
-                <a href="#" url="/AddressManagement/" class="redirect"><i class="fa fa-map-marker"></i> <span class="nav-label">区域管理</span> </a>
+                <a href="#" url="/DormitoryManagerManagement/" class="redirect"><i class="fa fa-users"></i> <span class="nav-label">楼管管理</span> </a>
                 </li>
                 <li class="li">
-                    <a href="#" url="/PackageListManagement/" class="redirect"><i class="fa fa-th-list"></i> <span class="nav-label">任务列表管理</span></a>
+                    <a href="#" url="/PaymentManagement/" class="redirect"><i class="fa fa-money" aria-hidden="true"></i><span class="nav-label">缴费管理</span></a>
                 </li>
                 <li class="li">
-                    <a href="#" url="/CourierCompanyManagement/" class="redirect"><i class="fa fa-truck"></i> <span class="nav-label">快递类型管理</span> </a>
-                </li>
-                <li class="li">
-                    <a href="#" url="/StandardManagement/" class="redirect"><i class="fa fa-street-view"></i> <span class="nav-label">包裹标准管理</span> </a>
-                </li>
-                <li class="li">
-                    <a href="#" url="/FeedBackManagement/" class="redirect"><i class="fa fa-thumbs-up"></i> <span class="nav-label">用户反馈</span> </a>
-                </li>
-                <li class="li">
-                    <a href="#" url="/UMITeam/admin" class="redirect"><i class="fa fa-tasks"></i> <span class="nav-label">团队接单</span> </a>
-                </li>
-                <li class="li">
-                    <a href="#" url="/SearchPackage/" class="redirect"><i class="fa fa-search-plus"></i> <span class="nav-label">订单查询</span> </a>
+                    <a href="#" url="/ScheduleManagement/" class="redirect"><i class="fa fa-align-justify" aria-hidden="true"></i><span class="nav-label">楼管排班</span> </a>
                 </li>
             </ul>
         </div>
@@ -196,7 +184,7 @@
                 <ul class="nav navbar-top-links navbar-right">
                     <li>
                         <span class="m-r-sm text-muted welcome-message"><a href="#" title="返回首页"><i
-                                class="fa fa-home"></i></a>欢迎使用智慧镖局后台管理系统</span>
+                                class="fa fa-home"></i></a>欢迎使用华理宿舍管理系统</span>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
@@ -350,7 +338,7 @@
                }
            })
         });
-        AjaxGetRequest("/UserManagement/UserInfo", fillUser);
+//        AjaxGetRequest("/UserManagement/UserInfo", fillUser);
     }
 
 

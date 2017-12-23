@@ -7,6 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <footer class="footer text-right">
-    2017 ©  华北理工智慧镖局
+    2017 ©  stevenjack
 </footer>
 

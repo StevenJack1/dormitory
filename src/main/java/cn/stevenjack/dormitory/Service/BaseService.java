@@ -155,9 +155,9 @@ class BaseService<T> {
      * @return 查询结果
      */
     @Transactional(readOnly = true)
-    public PageResults<User> getListByPage(@NotNull final Integer currentPageNumber,
+    public PageResults<T> getListByPage(@NotNull final Integer currentPageNumber,
                                            @NotNull final Integer pageSize) {
-        return (PageResults<User>) baseRepository.getListByPage(modelClass, currentPageNumber, pageSize);
+        return (PageResults<T>) baseRepository.getListByPage(modelClass, currentPageNumber, pageSize);
     }
 
     /**
