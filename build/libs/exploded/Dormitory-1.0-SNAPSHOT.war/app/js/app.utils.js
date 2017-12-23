@@ -217,6 +217,12 @@ var AjaxPost = function AjaxPost(url, success) {
         type: "POST",
         success: function () {
             success();
+            swal({
+                title: "修改成功",
+                text: "修改成功",
+                type: "success",
+                confirmButtonText: "知道了"
+            });
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             swal({

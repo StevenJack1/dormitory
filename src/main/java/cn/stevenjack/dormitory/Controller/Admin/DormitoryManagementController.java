@@ -50,4 +50,25 @@ public class DormitoryManagementController {
         dormitoryManagementService.deleteById(dormitoryInfoId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @RequiresRoles("admin")
+    @PostMapping("/modify/dormitoryInfoId/{dormitoryInfoId}/buildName/{buildName}/dormitoryName/{dormitoryName}/dormitoryType/{dormitoryType}")
+    public ResponseEntity<Void> createDormitory(@PathVariable int dormitoryInfoId,
+                                                @PathVariable String buildName,
+                                                @PathVariable String dormitoryName,
+                                                @PathVariable String dormitoryType){
+        DormitoryInfo dormitoryInfo = dormitoryManagementService.getById(dormitoryInfoId);
+        dormitoryInfo.setDormitoryType(dormitoryType);
+        dormitoryInfo.setBuildNumber(buildName);
+        dormitoryInfo.setDormitoryNumber(dormitoryName);
+        dormitoryManagementService.saveOrUpdate(dormitoryInfo);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @RequiresRoles("admin")
+    @ResponseBody
+    @GetMapping("/getTheDormitory/dormitoryInfoId/{dormitoryInfoId}")
+    public DormitoryInfo getTheDormitory(@PathVariable int dormitoryInfoId){
+        return dormitoryManagementService.getById(dormitoryInfoId);
+    }
 }

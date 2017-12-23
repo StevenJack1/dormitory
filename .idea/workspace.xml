@@ -7,17 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="379d1e9f-6703-4b4a-acd2-25b94a434e17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/classes/cn/stevenjack/dormitory/Model/PaymentInfo.class" afterPath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/classes/cn/stevenjack/dormitory/Model/PaymentInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/classes/cn/stevenjack/dormitory/Model/User.class" afterPath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/classes/cn/stevenjack/dormitory/Model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/cn/stevenjack/dormitory/Model/PaymentInfo.class" afterPath="$PROJECT_DIR$/out/production/classes/cn/stevenjack/dormitory/Model/PaymentInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/cn/stevenjack/dormitory/Model/User.class" afterPath="$PROJECT_DIR$/out/production/classes/cn/stevenjack/dormitory/Model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/classes/cn/stevenjack/dormitory/UtilsTest/SHAUtilsTest.class" afterPath="$PROJECT_DIR$/out/test/classes/cn/stevenjack/dormitory/UtilsTest/SHAUtilsTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/classes/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagementController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/classes/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagementController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagementController.class" afterPath="$PROJECT_DIR$/out/production/classes/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagementController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/views/Admin/PaymentManagement.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/views/Admin/PaymentManagement.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/PaymentInfo.java" afterPath="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/PaymentInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/User.java" afterPath="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/PaymentManagement.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/PaymentManagement.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cn/stevenjack/dormitory/UtilsTest/SHAUtilsTest.java" afterPath="$PROJECT_DIR$/src/test/java/cn/stevenjack/dormitory/UtilsTest/SHAUtilsTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/views/Admin/DormitoryManagement.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/views/Admin/DormitoryManagement.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/app/js/app.utils.js" afterPath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/app/js/app.utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagementController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagementController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/DormitoryManagement.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/DormitoryManagement.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/app/js/app.utils.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/js/app.utils.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -36,56 +33,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="PaymentManagement.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/PaymentManagement.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="54" column="43" lean-forward="true" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
-              <folding>
-                <marker date="1514016910643" expanded="true" signature="3454:3606" ph="..." />
-                <marker date="1514016910643" expanded="true" signature="4503:4723" ph="..." />
-                <marker date="1514016910643" expanded="true" signature="5836:6055" ph="..." />
-                <marker date="1514016910643" expanded="true" signature="7213:7466" ph="..." />
-                <marker date="1514016910643" expanded="true" signature="8742:9158" ph="..." />
-                <marker date="1514016910643" expanded="true" signature="10740:10858" ph="..." />
-                <marker date="1514016910643" expanded="true" signature="11671:11823" ph="..." />
-                <marker date="1514016910643" expanded="true" signature="12753:12939" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PaymentInfo.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/PaymentInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DormitoryManagement.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DormitoryManagement.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/DormitoryManagement.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2190">
-              <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+            <state relative-caret-position="315">
+              <caret line="172" column="70" lean-forward="true" selection-start-line="172" selection-start-column="70" selection-end-line="172" selection-end-column="70" />
               <folding>
-                <marker date="1514015391770" expanded="true" signature="4340:4482" ph="..." />
-                <marker date="1514015391770" expanded="true" signature="4340:4513" ph="..." />
-                <marker date="1514015391770" expanded="true" signature="4340:4609" ph="..." />
-                <marker date="1514015391770" expanded="true" signature="4340:4645" ph="..." />
+                <marker date="1514030156245" expanded="true" signature="6796:6938" ph="..." />
+                <marker date="1514030156245" expanded="true" signature="6796:6969" ph="..." />
+                <marker date="1514030156245" expanded="true" signature="6796:6991" ph="..." />
+                <marker date="1514030156245" expanded="true" signature="6796:7123" ph="..." />
+                <marker date="1514030156245" expanded="true" signature="6796:7215" ph="..." />
+                <marker date="1514030156245" expanded="true" signature="6796:7272" ph="..." />
+                <marker date="1514030156245" expanded="true" signature="7014:7123" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/User.java">
+      <file leaf-file-name="DormitoryInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/DormitoryInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="90" column="28" lean-forward="true" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+            <state relative-caret-position="780">
+              <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="32" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DormitoryManagementController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagementController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="543">
+              <caret line="69" column="33" lean-forward="false" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -471,8 +454,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/StudentManagement.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Service/DormitoryManagementService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Service/BaseService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/DormitoryManagement.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagementController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/DormitoryInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/ScheduleInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/VisitorsInfo.java" />
@@ -480,6 +461,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/PaymentManagement.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/PaymentInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/js/app.utils.js" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagementController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/DormitoryManagement.jsp" />
       </list>
     </option>
   </component>
@@ -945,7 +929,7 @@
       <option name="presentableId" value="Default" />
       <updated>1513949246439</updated>
       <workItem from="1513949259682" duration="3669000" />
-      <workItem from="1513993721246" duration="18478000" />
+      <workItem from="1513993721246" duration="21405000" />
     </task>
     <servers />
   </component>
@@ -967,7 +951,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22147000" />
+    <option name="totallyTimeSpent" value="25074000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="69" y="-9" width="1860" height="1098" extended-state="6" />
@@ -1218,44 +1202,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/js/app.utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1050">
-          <caret line="102" column="4" lean-forward="false" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="4" />
-          <folding>
-            <marker date="1513949038682" expanded="true" signature="3150:3157" ph="«" />
-            <marker date="1513949038682" expanded="true" signature="3289:3296" ph="«" />
-            <marker date="1513949038682" expanded="true" signature="3936:3943" ph="»" />
-            <marker date="1513949038682" expanded="true" signature="4071:4078" ph="»" />
-            <marker date="1513949038682" expanded="true" signature="12296:12302" ph="&amp;nbsp;" />
-            <marker date="1513949038682" expanded="true" signature="12302:12308" ph="&amp;nbsp;" />
-            <marker date="1513949038682" expanded="true" signature="12308:12314" ph="&amp;nbsp;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagementController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#835#836#0" expanded="true" />
-            <element signature="e#885#886#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/DormitoryInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/ScheduleInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1272,7 +1218,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/DormitoryManagerManagement.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/ScheduleManagement.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="16" />
@@ -1280,10 +1226,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/ScheduleManagement.jsp">
+    <entry file="file://$PROJECT_DIR$/src/test/java/cn/stevenjack/dormitory/UtilsTest/SHAUtilsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="16" />
+        <state relative-caret-position="600">
+          <caret line="20" column="50" lean-forward="true" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="90" column="28" lean-forward="true" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/PaymentInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="46" column="11" lean-forward="true" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1305,42 +1269,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/stevenjack/dormitory/UtilsTest/SHAUtilsTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/DormitoryManagerManagement.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="20" column="50" lean-forward="true" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+        <state relative-caret-position="300">
+          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/js/app.utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="221" column="29" lean-forward="true" selection-start-line="221" selection-start-column="29" selection-end-line="221" selection-end-column="29" />
+          <folding>
+            <marker date="1514029441553" expanded="true" signature="3150:3157" ph="«" />
+            <marker date="1514029441553" expanded="true" signature="3289:3296" ph="«" />
+            <marker date="1514029441553" expanded="true" signature="3936:3943" ph="»" />
+            <marker date="1514029441553" expanded="true" signature="4071:4078" ph="»" />
+            <marker date="1514029441553" expanded="true" signature="12466:12472" ph="&amp;nbsp;" />
+            <marker date="1514029441553" expanded="true" signature="12472:12478" ph="&amp;nbsp;" />
+            <marker date="1514029441553" expanded="true" signature="12478:12484" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagementController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="69" column="33" lean-forward="false" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/DormitoryInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/DormitoryManagement.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2190">
-          <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+        <state relative-caret-position="315">
+          <caret line="172" column="70" lean-forward="true" selection-start-line="172" selection-start-column="70" selection-end-line="172" selection-end-column="70" />
           <folding>
-            <marker date="1514015391770" expanded="true" signature="4340:4482" ph="..." />
-            <marker date="1514015391770" expanded="true" signature="4340:4513" ph="..." />
-            <marker date="1514015391770" expanded="true" signature="4340:4609" ph="..." />
-            <marker date="1514015391770" expanded="true" signature="4340:4645" ph="..." />
+            <marker date="1514030156245" expanded="true" signature="6796:6938" ph="..." />
+            <marker date="1514030156245" expanded="true" signature="6796:6969" ph="..." />
+            <marker date="1514030156245" expanded="true" signature="6796:6991" ph="..." />
+            <marker date="1514030156245" expanded="true" signature="6796:7123" ph="..." />
+            <marker date="1514030156245" expanded="true" signature="6796:7215" ph="..." />
+            <marker date="1514030156245" expanded="true" signature="6796:7272" ph="..." />
+            <marker date="1514030156245" expanded="true" signature="7014:7123" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="90" column="28" lean-forward="true" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Model/PaymentInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
