@@ -137,16 +137,14 @@ public class UserInfoService extends BaseService<User>{
         return super.getCountByQuery(query);
     }
 
-//    public PageResults<User> getListByPageAndSchool(@NotNull Role role,
-//                                                    @NotNull School school,
-//                                                    @NotNull Integer currentPageNumber,
-//                                                    @NotNull Integer pageSize){
-//        Query query=new Query(entityManager);
-//        query.from(User.class)
-//                .whereEqual("school",school)
-//                .whereEqual("role",role);
-//        return super.getListByPageAndQuery(currentPageNumber,pageSize,query);
-//    }
+    public PageResults<User> getListByCollege(@NotNull String college,
+                                                    @NotNull Integer currentPageNumber,
+                                                    @NotNull Integer pageSize){
+        Query query=new Query(entityManager);
+        query.from(User.class)
+                .whereEqual("college",college);
+        return super.getListByPageAndQuery(currentPageNumber,pageSize,query);
+    }
 
 //    public PageResults<User> getListPageByAuthStatus(@NotNull Role role,
 //                                                     @NotNull School school,

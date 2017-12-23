@@ -25,16 +25,34 @@ public class DormitoryManagementController {
         return "Admin/DormitoryManagement";
     }
 
+    /**
+     * 添加宿舍
+     * @param buildName
+     * @param dormitoryName
+     * @param dormitoryType
+     * @return
+     */
     @RequiresRoles("admin")
     @PostMapping("/createDormitory/buildName/{buildName}/dormitoryName/{dormitoryName}/dormitoryType/{dormitoryType}")
     public ResponseEntity<Void> createDormitory(@PathVariable String buildName,
                                                 @PathVariable String dormitoryName,
                                                 @PathVariable String dormitoryType){
-        DormitoryInfo dormitoryInfo = new DormitoryInfo(buildName, dormitoryName, dormitoryType, 4, null);
-        dormitoryManagementService.save(dormitoryInfo);
+        if (dormitoryType.equals("普通类")){
+            DormitoryInfo dormitoryInfo = new DormitoryInfo(buildName, dormitoryName, dormitoryType, 4,400, null);
+            dormitoryManagementService.save(dormitoryInfo);
+        } else{
+            DormitoryInfo dormitoryInfo = new DormitoryInfo(buildName, dormitoryName, dormitoryType, 4,800, null);
+            dormitoryManagementService.save(dormitoryInfo);
+        }
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    /**
+     * 分页获取宿舍
+     * @param pageNumber
+     * @param pageSize
+     * @return
+     */
     @RequiresRoles("admin")
     @ResponseBody
     @GetMapping("/getDormitory/pageNumber/{pageNumber}/pageSize/{pageSize}")
@@ -43,6 +61,11 @@ public class DormitoryManagementController {
         return dormitoryManagementService.getListByPage(pageNumber,pageSize);
     }
 
+    /**
+     * 删除宿舍
+     * @param dormitoryInfoId
+     * @return
+     */
     @RequiresRoles("admin")
     @ResponseBody
     @DeleteMapping("/delete/dormitoryInfoId/{dormitoryInfoId}")
@@ -51,6 +74,14 @@ public class DormitoryManagementController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    /**
+     * 修改宿舍信息
+     * @param dormitoryInfoId
+     * @param buildName
+     * @param dormitoryName
+     * @param dormitoryType
+     * @return
+     */
     @RequiresRoles("admin")
     @PostMapping("/modify/dormitoryInfoId/{dormitoryInfoId}/buildName/{buildName}/dormitoryName/{dormitoryName}/dormitoryType/{dormitoryType}")
     public ResponseEntity<Void> createDormitory(@PathVariable int dormitoryInfoId,
@@ -65,6 +96,11 @@ public class DormitoryManagementController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    /**
+     * 获取一个宿舍信息
+     * @param dormitoryInfoId
+     * @return
+     */
     @RequiresRoles("admin")
     @ResponseBody
     @GetMapping("/getTheDormitory/dormitoryInfoId/{dormitoryInfoId}")

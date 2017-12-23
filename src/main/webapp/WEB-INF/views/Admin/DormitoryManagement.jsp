@@ -26,6 +26,7 @@
                                 <th>宿舍楼名称</th>
                                 <th>宿舍名称</th>
                                 <th>宿舍类型</th>
+                                <th>宿舍费用</th>
                                 <th>床铺剩余数量</th>
                                 <th>操作</th>
                             </tr>
@@ -152,6 +153,7 @@
                     <td >`+e.buildNumber+`</td>
                     <td>`+e.dormitoryNumber+`</td>
                     <td>`+e.dormitoryType+`</td>
+                    <td>`+e.paymentMoney+`</td>
                     <td>`+e.bedNumber+`</td>
                     <td>
                         <a class="md-modify" data-toggle="modal" data-target="#myModal2" dormitoryInfoId = '`+e.id+`'>修改</a>
@@ -197,6 +199,10 @@
 
     //新增宿舍
     $("#dormitoryCreateButton").click(function () {
+//        $("#buildName").val("");
+//        $("#dormitoryName").val("");
+//        $("#dormitoryType").val("");
+
         var buildName = $("#buildName").val();
         var dormitoryName = $("#dormitoryName").val();
         var dormitoryType = $("#dormitoryType").val();
@@ -210,6 +216,9 @@
         } else {
             AjaxPostRequest("/DormitoryManagement/createDormitory/buildName/" + buildName + "/dormitoryName/" + dormitoryName + "/dormitoryType/" + dormitoryType);
             $("#dormitoryCancelButton").click();
+            $("#buildName").val("");
+            $("#dormitoryName").val("");
+            $("#dormitoryType").val("");
             loadThis();
         }
     });

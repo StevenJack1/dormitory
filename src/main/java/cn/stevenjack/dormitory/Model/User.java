@@ -10,6 +10,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by arthurme on 2017/3/20.
@@ -67,17 +68,21 @@ public class User implements Serializable{
     @Setter
     private String nativePlace;
 
+    // 缴费时间
+    @Getter
+    @Setter
+    private Date paymentTime;
+
+    // 是否缴费
+    @Getter
+    @Setter
+    private boolean isPayment;
+
     @Setter
     @Getter
     @ManyToOne
     @JoinColumn(name = "dormitoryInfo")
     private DormitoryInfo dormitoryInfo;
-
-    @Setter
-    @Getter
-    @OneToOne
-    @JoinColumn(name = "paymentInfo")
-    private PaymentInfo paymentInfo;
 
     // 联系方式
     @Getter

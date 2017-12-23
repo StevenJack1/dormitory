@@ -8,6 +8,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -48,6 +49,11 @@ public class DormitoryInfo implements Serializable{
     @Setter
     private String dormitoryType;
 
+    // 缴费金额
+    @Getter
+    @Setter
+    private int paymentMoney;
+
     // 床铺数量
     @Getter
     @Setter
@@ -59,11 +65,12 @@ public class DormitoryInfo implements Serializable{
     @LazyCollection(LazyCollectionOption.EXTRA)
     private List<User> userList;
 
-    public DormitoryInfo(String buildNumber,String dormitoryNumber,String dormitoryType,int bedNumber,List<User> userList){
+    public DormitoryInfo(String buildNumber,String dormitoryNumber,String dormitoryType,int bedNumber,int paymentMoney,List<User> userList){
         this.buildNumber = buildNumber;
         this.dormitoryNumber = dormitoryNumber;
         this.dormitoryType = dormitoryType;
         this.bedNumber = bedNumber;
+        this.paymentMoney = paymentMoney;
         this.userList = userList;
     }
 
