@@ -1,9 +1,6 @@
 package cn.stevenjack.dormitory.Model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
@@ -23,7 +20,7 @@ import java.util.Date;
  */
 @Entity
 @Table
-
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class PaymentInfo implements Serializable{

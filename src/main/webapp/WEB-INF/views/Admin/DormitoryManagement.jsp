@@ -104,13 +104,12 @@
                     <td>`+e.dormitoryNumber+`</td>
                     <td>`+e.dormitoryType+`</td>
                     <td>`+e.bedNumber+`</td>
-                    <td><a class="md-delete" dormitoryInfoId = '`+e.id+`'>`+e.id+`</a></td>
+                    <td><a class="md-delete" dormitoryInfoId = '`+e.id+`'>删除</a></td>
                     </tr>
                     `);
             });
             $(".md-delete").click(function () {
                 const dormitoryInfoId = $(this).attr("dormitoryInfoId");
-                console.log(dormitoryInfoId)
                 AjaxDeleteRequest("/DormitoryManagement/delete/dormitoryInfoId/" + dormitoryInfoId );
                 loadThis();
             });

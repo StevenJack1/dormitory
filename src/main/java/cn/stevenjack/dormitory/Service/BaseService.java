@@ -157,7 +157,7 @@ class BaseService<T> {
     @Transactional(readOnly = true)
     public PageResults<T> getListByPage(@NotNull final Integer currentPageNumber,
                                            @NotNull final Integer pageSize) {
-        return (PageResults<T>) baseRepository.getListByPage(modelClass, currentPageNumber, pageSize);
+        return baseRepository.getListByPage(modelClass, currentPageNumber, pageSize);
     }
 
     /**

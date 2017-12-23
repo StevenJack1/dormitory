@@ -1,10 +1,7 @@
 package cn.stevenjack.dormitory.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
@@ -24,6 +21,7 @@ import java.util.List;
 @Entity
 @Table
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class DormitoryInfo implements Serializable{
