@@ -2,6 +2,7 @@ package cn.stevenjack.dormitory.Model;
 
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -42,6 +43,11 @@ public class VisitorsInfo implements Serializable{
     @Setter
     private String otherName;
 
+    // 宿舍楼
+    @Getter
+    @Setter
+    private String buildName;
+
     // 来访事由
     @Getter
     @Setter
@@ -55,5 +61,13 @@ public class VisitorsInfo implements Serializable{
     // 计划离开时间
     @Getter
     @Setter
-    private Date end;
+    private String end;
+
+    public VisitorsInfo( String buildName, String visitorName, String otherName, String cause, String end){
+        this.buildName =buildName;
+        this.visitorName =visitorName;
+        this.otherName =otherName;
+        this.cause =cause;
+        this.end =end;
+    }
 }

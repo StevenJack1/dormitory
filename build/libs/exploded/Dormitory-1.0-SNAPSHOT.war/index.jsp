@@ -10,9 +10,9 @@
 <%--<shiro:hasRole name="student">--%>
   <%--<%@include file="student.jsp"%>--%>
 <%--</shiro:hasRole>--%>
-<%--<shiro:hasRole name="dormitoryManager">--%>
-  <%--<%@include file="dormitoryManager.jsp"%>--%>
-<%--</shiro:hasRole>--%>
+<shiro:hasRole name="dormitoryManager">
+  <%@include file="dormitoryManager.jsp"%>
+</shiro:hasRole>
 <shiro:hasRole name="admin">
   <%@include file="admin.jsp"%>
 </shiro:hasRole>
