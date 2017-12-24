@@ -74,7 +74,6 @@
                             </tbody>
                         </table>
                     </div>
-                    <ul class="pagination" id="pagination"></ul>
                 </div>
             </div>
         </div>
@@ -107,7 +106,7 @@
 //                loadThis();
 //            });
         };
-        Paging("/ScheduleManagement/getInfo/buildName/" + buildName, "scheduleInfoTable", uploadTable, pageNumber, 10);
+        AjaxGetRequest("/ScheduleManagement/getInfo/buildName/" + buildName,uploadTable);
     };
 
     $(document).ready(function () {

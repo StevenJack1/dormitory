@@ -1,6 +1,7 @@
 package cn.stevenjack.dormitory.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import groovy.lang.GrabExclude;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -83,8 +84,13 @@ public class User implements Serializable{
     // 是否缴费
     @Getter
     @Setter
-    @Column(nullable = true)
     private boolean isPayment;
+
+    // 宿管楼号
+    @Getter
+    @Setter
+    @Column(nullable = true)
+    private String buildName;
 
     @Setter
     @Getter
