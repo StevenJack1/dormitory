@@ -216,7 +216,7 @@ var AjaxPost = function AjaxPost(url, success) {
         url: url,
         type: "POST",
         success: function () {
-            success();
+            // success();
             swal({
                 title: "修改成功",
                 text: "修改成功",
@@ -532,3 +532,23 @@ var getLocalTime = function(nS) {
         return "";
     }
 };
+
+function modifyScheduleInfo(weekDay,userName) {
+
+    $("#CreateButton").click(function () {
+        var scheduleStatus = $("#scheduleStatus").val();
+        if (isNullOrEmpty(scheduleStatus)) {
+            swal({
+                title: "错误",
+                text: "不可为空",
+                type: "error",
+                confirmButtonText: "知道了"
+            });
+        } else {
+            AjaxPost("/ScheduleManagement/modify/weekDay/"+ weekDay + "/userName/" + userName + "/scheduleStatus/" + scheduleStatus);
+            $("#CancelButton").click();
+            loadPage(1);
+        }
+    });
+};
+

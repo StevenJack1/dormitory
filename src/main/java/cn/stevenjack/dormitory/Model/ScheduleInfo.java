@@ -48,5 +48,11 @@ public class ScheduleInfo implements Serializable{
     @JoinColumn(name = "user")
     private User user;
 
+    public ScheduleInfo(String workTime,ScheduleStatus scheduleStatus,User user){
+        this.workTime = workTime;
+        this.scheduleStatus = scheduleStatus;
+        this.user = user;
+    }
+
 
 }

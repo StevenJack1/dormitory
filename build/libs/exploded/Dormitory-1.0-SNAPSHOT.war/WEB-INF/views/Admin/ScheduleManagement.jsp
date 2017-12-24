@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <style>
-    tbody tr:hover {
+    tbody tr td:hover {
         background: linear-gradient(#fff,#aaa);
         font-size: 17px;
     }
@@ -61,13 +61,13 @@
                             <thead id="tableTop">
                                 <tr>
                                     <th>姓名</th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
+                                    <th id="monday"></th>
+                                    <th id="tuesday"></th>
+                                    <th id="wednesday"></th>
+                                    <th id="thursday"></th>
+                                    <th id="friday"></th>
+                                    <th id="saturday"></th>
+                                    <th id="sunday"></th>
                                 </tr>
                             </thead>
                             <tbody id="scheduleInfoTable">
@@ -81,37 +81,151 @@
     </div>
 </div>
 
+<div class="modal inmodal fade in" id="myModal1" tabindex="-1" role="dialog" aria-hidden="true"
+     style="display: none ; padding-right: 17px;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title">排班</h4>
+            </div>
+            <small class="font-bold">
+                <div class="modal-body" align="center">
+                    <form class="form-horizontal" role="form">
+
+                        <div class="form-group">
+
+                            <label class="col-sm-4 control-label" style="font-size: medium">排班事项</label>
+                            <div class="col-sm-6">
+                                <select class="input-sm   " title="请选择排班类型" id="scheduleStatus">
+                                    <option value="早班">早班</option>
+                                    <option value="晚班">晚班</option>
+                                    <option value="病假">病假</option>
+                                    <option value="事假">事假</option>
+                                    <option value="调休">调休</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal" id="CancelButton">取消</button>
+                    <button type="button" class="btn btn-primary" id="CreateButton">确认</button>
+                </div>
+            </small>
+        </div>
+        <small class="font-bold">
+        </small>
+    </div>
+    <small class="font-bold">
+    </small>
+</div>
+
 <script>
 
-    var loadPage = function (pageNumber) {
+    var loadPage = function () {
         var buildName = $("#buildName").val();
+
+        var monday = $("#monday").text().split("(")[0];
+        var tuesday = $("#tuesday").text().split("(")[0];
+        var wednesday = $("#wednesday").text().split("(")[0];
+        var thursday = $("#thursday").text().split("(")[0];
+        var friday = $("#friday").text().split("(")[0];
+        var saturday = $("#saturday").text().split("(")[0];
+        var sunday = $("#sunday").text().split("(")[0];
+
+
         var uploadTable = function (data) {
-//            $("#scheduleInfoTable").empty();
-//            var result = data["results"];
-//            result.forEach(function (e) {
-//                $("#scheduleInfoTable").append(`
-//                    <tr>
-//                    <td >`+e.dormitoryInfo.buildNumber+`</td>
-//                    <td>`+e.dormitoryInfo.dormitoryNumber+`</td>
-//                    <td>`+e.dormitoryInfo.dormitoryType+`</td>
-//                    <td>`+e.name+`</td>
-//                    <td>`+e.dormitoryInfo.paymentMoney+`</td>
-//                    <td><a class="md-payment" studentId = '`+e.userName+`'>缴费</a></td>
-//                    </tr>
-//                    `);
-//            });
-//            $(".md-payment").click(function () {
-//                const studentId = $(this).attr("studentId");
-//                AjaxPost("/PaymentManagement/isPayment/studentId/" + studentId );
-//                loadThis();
-//            });
+            $("#scheduleInfoTable").empty();
+            for (var i = 0; i < data.length; i++){
+                var userName = data[i].userName;
+                var suuccess = function (e) {
+                    var monday_child = "";
+                    var tuesday_child = "";
+                    var wednesday_child = "";
+                    var thursday_child = "";
+                    var friday_child = "";
+                    var saturday_child = "";
+                    var sunday_child = "";
+                    for (var item of e){
+                        if (item.workTime == monday){
+                            monday_child = item.scheduleStatus;
+                        } else if (item.workTime == tuesday_child){
+                            tuesday_child = item.scheduleStatus;
+                        } else if (item.workTime == wednesday){
+                            wednesday_child = item.scheduleStatus;
+                        } else if (item.workTime == wednesday){
+                            wednesday_child = item.scheduleStatus;
+                        } else if (item.workTime == thursday){
+                            thursday_child = item.scheduleStatus;
+                        } else if (item.workTime == friday){
+                            friday_child = item.scheduleStatus;
+                        } else if (item.workTime == saturday){
+                            saturday_child = item.scheduleStatus;
+                        } else if (item.workTime == sunday){
+                            sunday_child = item.scheduleStatus;
+                        }
+                    }
+                    $("#scheduleInfoTable").append(`
+                        <tr>
+                            <td>`+ data[i].name +` </td>
+                            <td class="md-modify-1" data-toggle="modal" data-target="#myModal1" weekDay = '`+monday+`' userName = '`+data[i].userName+`'>`+ monday_child +`</td>
+                            <td class="md-modify-2" data-toggle="modal" data-target="#myModal1" weekDay = '`+tuesday+`' userName = '`+data[i].userName+`'>`+ tuesday_child +`</td>
+                            <td class="md-modify-3" data-toggle="modal" data-target="#myModal1" weekDay = '`+wednesday+`' userName = '`+data[i].userName+`'>`+ wednesday_child +`</td>
+                            <td class="md-modify-4" data-toggle="modal" data-target="#myModal1" weekDay = '`+thursday+`' userName = '`+data[i].userName+`'>`+ thursday_child +`</td>
+                            <td class="md-modify-5" data-toggle="modal" data-target="#myModal1" weekDay = '`+friday+`' userName = '`+data[i].userName+`'>`+ friday_child +`</td>
+                            <td class="md-modify-6" data-toggle="modal" data-target="#myModal1" weekDay = '`+saturday+`' userName = '`+data[i].userName+`'>`+ saturday_child +`</td>
+                            <td class="md-modify-7" data-toggle="modal" data-target="#myModal1" weekDay = '`+sunday+`' userName = '`+data[i].userName+`'>`+ sunday_child +`</td>
+                        </tr>
+                    `);
+
+
+                };
+                AjaxGetRequest("/ScheduleManagement/getSchedule/userName/" + userName + "/monday/" + monday + "/tuesday/" + tuesday + "/wednesday/" + wednesday + "/thursday/" + thursday + "/friday/" + friday + "/saturday/" + saturday + "/sunday/" + sunday,suuccess);
+            }
+            $(".md-modify-1").click(function () {
+                const weekDay = $(this).attr("weekDay");
+                const userName = $(this).attr("userName");
+                modifyScheduleInfo(weekDay,userName);
+            });
+            $(".md-modify-2").click(function () {
+                const weekDay = $(this).attr("weekDay");
+                const userName = $(this).attr("userName");
+                modifyScheduleInfo(weekDay,userName)
+            });
+            $(".md-modify-3").click(function () {
+                const weekDay = $(this).attr("weekDay");
+                const userName = $(this).attr("userName");
+                modifyScheduleInfo(weekDay,userName)
+            });
+            $(".md-modify-4").click(function () {
+                const weekDay = $(this).attr("weekDay");
+                const userName = $(this).attr("userName");
+                modifyScheduleInfo(weekDay,userName)
+            });
+            $(".md-modify-5").click(function () {
+                const weekDay = $(this).attr("weekDay");
+                const userName = $(this).attr("userName");
+                modifyScheduleInfo(weekDay,userName)
+            });
+            $(".md-modify-6").click(function () {
+                const weekDay = $(this).attr("weekDay");
+                const userName = $(this).attr("userName");
+                modifyScheduleInfo(weekDay,userName)
+            });
+            $(".md-modify-7").click(function () {
+                const weekDay = $(this).attr("weekDay");
+                const userName = $(this).attr("userName");
+                modifyScheduleInfo(weekDay,userName)
+            });
         };
         AjaxGetRequest("/ScheduleManagement/getInfo/buildName/" + buildName,uploadTable);
     };
 
-    $(document).ready(function () {
-        loadPage(1);
-    });
+
 </script>
 
 <script>
@@ -120,9 +234,9 @@
         var clen = cells.length;
         var currentFirstDate;
         var formatDate = function(date){
-            var year = date.getFullYear()+'/';
-            var month = (date.getMonth()+1)+'/';
-            var day = date.getDate() + '<br>';
+            var year = date.getFullYear()+'年';
+            var month = (date.getMonth()+1)+'月';
+            var day = date.getDate();
             var week = '('+['星期天','星期一','星期二','星期三','星期四','星期五','星期六'][date.getDay()]+')';
             var str = year+month+day;
             str += week;
@@ -138,19 +252,24 @@
             currentFirstDate = new Date(date);
 
             for(var i = 1;i<clen;i++){
-                cells[i].innerHTML = formatDate(i==1 ? date : addDate(date,1));
+               $("#tableTop").find("th").eq(i).text(formatDate(i==1 ? date : addDate(date,1)));
+//                cells[i].innerHTML = formatDate(i==1 ? date : addDate(date,1));
             }
         };
         $("#last-week").click(function () {
             setDate(addDate(currentFirstDate,-7));
+            loadPage()
         });
         $("#next-week").click(function () {
             setDate(addDate(currentFirstDate,7));
+            loadPage()
         });
         $("#this-week").click(function () {
             setDate(new Date());
+            loadPage()
         });
         setDate(new Date());
+        loadPage()
     });
 
 </script>

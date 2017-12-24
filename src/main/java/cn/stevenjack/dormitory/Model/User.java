@@ -98,11 +98,14 @@ public class User implements Serializable{
     @JoinColumn(name = "dormitoryInfo")
     private DormitoryInfo dormitoryInfo;
 
+
     @Setter
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.EXTRA)
     @Column(nullable = true)
     private List<ScheduleInfo> scheduleInfoList;
+
+
 
     // 联系方式
     @Getter
