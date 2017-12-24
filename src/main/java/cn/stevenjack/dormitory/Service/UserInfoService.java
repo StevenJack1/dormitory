@@ -146,18 +146,16 @@ public class UserInfoService extends BaseService<User>{
         return super.getListByPageAndQuery(currentPageNumber,pageSize,query);
     }
 
-//    public PageResults<User> getListPageByAuthStatus(@NotNull Role role,
-//                                                     @NotNull School school,
-//                                                     @NotNull AuthStatus authStatus,
-//                                                     @NotNull Integer pageNumber,
-//                                                     @NotNull Integer pageSize){
-//        Query query=new Query(entityManager);
-//        query.from(User.class)
-//                .whereEqual("school",school)
-//                .whereEqual("authStatus",authStatus)
-//                .whereEqual("role",role);
-//        return super.getListByPageAndQuery(pageNumber,pageSize,query);
-//    }
+    public PageResults<User> getListByBuildNameAndRole(@NotNull Role role,
+                                                     @NotNull String buildName,
+                                                     @NotNull Integer pageNumber,
+                                                     @NotNull Integer pageSize){
+        Query query=new Query(entityManager);
+        query.from(User.class)
+                .whereEqual("buildName",buildName)
+                .whereEqual("role",role);
+        return super.getListByPageAndQuery(pageNumber,pageSize,query);
+    }
 
     public List<User> getListByRole(@NotNull Role role){
         Query query=new Query(entityManager);

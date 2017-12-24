@@ -42,27 +42,32 @@ public class DormitoryInfo implements Serializable{
     // 宿舍号
     @Getter
     @Setter
+    @Column(nullable = true)
     private String dormitoryNumber;
 
     // 宿舍类型
     @Getter
     @Setter
+    @Column(nullable = true)
     private String dormitoryType;
 
     // 缴费金额
     @Getter
     @Setter
+    @Column(nullable = true)
     private int paymentMoney;
 
     // 床铺数量
     @Getter
     @Setter
+    @Column(nullable = true)
     private int bedNumber;
 
     // 宿舍入住学生
     @Setter
     @OneToMany(mappedBy = "dormitoryInfo",cascade = CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.EXTRA)
+    @Column(nullable = true)
     private List<User> userList;
 
     public DormitoryInfo(String buildNumber,String dormitoryNumber,String dormitoryType,int bedNumber,int paymentMoney,List<User> userList){

@@ -19,6 +19,7 @@ public class SHAUtilsTest {
         System.out.println(
                 getSHA_256(
                         getSHA_256("admin" + "admin")
+                        // admin + 9cf3e758a497c6274bd066d0b2168432f8a34aad95f63a65677a9a56acec94a7
                 )
         );
         System.out.println(

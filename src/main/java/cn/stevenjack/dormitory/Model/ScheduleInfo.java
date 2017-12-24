@@ -2,6 +2,7 @@ package cn.stevenjack.dormitory.Model;
 
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -29,17 +30,23 @@ public class ScheduleInfo implements Serializable{
     @GenericGenerator(name = "generator",strategy = "increment")
     private Integer id;
 
-    // 楼管
+
+    // 时间
     @Getter
     @Setter
-    @OneToOne
+    private String workTime;
+
+    // 事件
+    @Getter
+    @Setter
+    @Enumerated(EnumType.STRING)
+    private ScheduleStatus scheduleStatus;
+
+    @Getter
+    @Setter
+    @ManyToOne
     @JoinColumn(name = "user")
     private User user;
-
-    // 排班时间
-    @Getter
-    @Setter
-    private Date workTime;
 
 
 }

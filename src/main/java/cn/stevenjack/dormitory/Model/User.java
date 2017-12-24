@@ -5,12 +5,15 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by arthurme on 2017/3/20.
@@ -49,6 +52,7 @@ public class User implements Serializable{
     private int age;
 
     // 学院
+    @Column(nullable = true)
     @Getter
     @Setter
     private String college;
@@ -56,11 +60,13 @@ public class User implements Serializable{
     // 专业
     @Getter
     @Setter
+    @Column(nullable = true)
     private String profession;
 
     // 班级号
     @Getter
     @Setter
+    @Column(nullable = true)
     private String classNumber;
 
     // 籍贯
@@ -71,11 +77,13 @@ public class User implements Serializable{
     // 缴费时间
     @Getter
     @Setter
+    @Column(nullable = true)
     private Date paymentTime;
 
     // 是否缴费
     @Getter
     @Setter
+    @Column(nullable = true)
     private boolean isPayment;
 
     @Setter
@@ -83,6 +91,12 @@ public class User implements Serializable{
     @ManyToOne
     @JoinColumn(name = "dormitoryInfo")
     private DormitoryInfo dormitoryInfo;
+
+    @Setter
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.EXTRA)
+    @Column(nullable = true)
+    private List<ScheduleInfo> scheduleInfoList;
 
     // 联系方式
     @Getter
@@ -120,5 +134,10 @@ public class User implements Serializable{
     @JsonIgnore    //生成json不包含此字段,必须打在Getter上面
     public String getPassWord() {
         return passWord;
+    }
+
+    @JsonIgnore
+    public List<ScheduleInfo> getScheduleInfoList(){
+        return scheduleInfoList;
     }
 }
