@@ -58,11 +58,6 @@
                     <form class="form-horizontal" role="form">
 
                         <div class="form-group">
-                            <label class="col-sm-4 control-label" style="font-size: medium">宿舍楼</label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="请输入宿舍楼名称" name="buildName"
-                                       id="buildName">
-                            </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">访客姓名</label>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control" placeholder="请输入访客姓名" name="visitorName"
@@ -82,6 +77,7 @@
                             <div class="col-sm-6">
                                 <input type="text" class="form-control" placeholder="请输入计划离开时间" name="end"
                                        id="end">
+
                             </div>
                         </div>
                     </form>
@@ -114,11 +110,6 @@
                     <form class="form-horizontal" role="form">
 
                         <div class="form-group">
-                            <label class="col-sm-4 control-label" style="font-size: medium">宿舍楼</label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="请输入宿舍楼名称" name="modifybuildName"
-                                       id="modifybuildName">
-                            </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">访客姓名</label>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control" placeholder="请输入访客姓名" name="modifyvisitorName"
@@ -156,7 +147,24 @@
 </div>
 
 
+<script src="${pageContext.request.contextPath}/assets/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/plugins/datapicker/bootstrap-datetimepicker.zh-CN.js"></script>
 <script type="text/javascript">
+//    $('#end').datepicker({
+//        format: "yyyy-mm-dd",
+//        language: "zh-CN",
+//        calendarWeeks: true,
+//        autoclose: true
+//    });
+//
+//    $('#modifyend').datepicker({
+//        format: "yyyy-mm-dd",
+//        language: "zh-CN",
+//        calendarWeeks: true,
+//        autoclose: true
+//    });
+
+
     //分页加载页面
     var loadPage = function (pageNumber) {
         var uploadTable = function (data) {
@@ -170,7 +178,7 @@
                     <td>`+e.otherName+`</td>
                     <td>`+e.cause+`</td>
                     <td>`+getLocalTime(e.begin)+`</td>
-                    <td>`+getLocalTime(e.end)+`</td>
+                    <td>`+e.end+`</td>
                     <td>
                         <a class="md-modify" data-toggle="modal" data-target="#myModal2" visitorInfoId = '`+e.id+`'>修改</a>
                         <a class="md-delete" visitorInfoId = '`+e.id+`'>删除</a>
@@ -186,7 +194,6 @@
             $(".md-modify").click(function () {
                 const visitorInfoId = $(this).attr("visitorInfoId");
                 var success = function (data) {
-                    $("#modifybuildName").val(data.buildName);
                     $("#modifyvisitorName").val(data.visitorName);
                     $("#modifyotherName").val(data.otherName);
                     $("#modifycause").val(data.cause);
@@ -194,12 +201,11 @@
                 };
                 Get("/Visitor/getTheVisitor/visitorInfoId/" + visitorInfoId,success);
                 $("#modifyCreateButton").click(function () {
-                    var modifyBuildName = $("#modifybuildName").val();
                     var modifyVisitorName = $("#modifyvisitorName").val();
                     var modifyOtherName = $("#modifyotherName").val();
                     var modifyCause = $("#modifycause").val();
                     var modifyEnd = $("#modifyend").val();
-                    if (isNullOrEmpty(modifyBuildName) || isNullOrEmpty(modifyVisitorName) || isNullOrEmpty(modifyOtherName) || isNullOrEmpty(modifyCause) || isNullOrEmpty(modifyEnd)) {
+                    if (isNullOrEmpty(modifyVisitorName) || isNullOrEmpty(modifyOtherName) || isNullOrEmpty(modifyCause) || isNullOrEmpty(modifyEnd)) {
                         swal({
                             title: "错误",
                             text: "不可为空",
@@ -207,7 +213,7 @@
                             confirmButtonText: "知道了"
                         });
                     } else {
-                        AjaxPost("/Visitor/modify/visitorInfoId/"+ visitorInfoId + "/modifyBuildName/" + modifyBuildName + "/modifyVisitorName/" + modifyVisitorName + "/modifyOtherName/" + modifyOtherName + "/modifyCause/" + modifyCause + "/modifyEnd/" + modifyEnd);
+                        AjaxPost("/Visitor/modify/visitorInfoId/"+ visitorInfoId + "/modifyVisitorName/" + modifyVisitorName + "/modifyOtherName/" + modifyOtherName + "/modifyCause/" + modifyCause + "/modifyEnd/" + modifyEnd);
                         $("#modifyCancelButton").click();
                         loadThis();
                     }
@@ -220,13 +226,12 @@
     //新增宿舍
     $("#CreateButton").click(function () {
 
-        var buildName = $("#buildName").val();
         var visitorName = $("#visitorName").val();
         var otherName = $("#otherName").val();
         var cause = $("#cause").val();
         var end = $("#end").val();
 
-        if (isNullOrEmpty(buildName) || isNullOrEmpty(visitorName) || isNullOrEmpty(otherName) || isNullOrEmpty(cause) || isNullOrEmpty(end)) {
+        if (isNullOrEmpty(visitorName) || isNullOrEmpty(otherName) || isNullOrEmpty(cause) || isNullOrEmpty(end)) {
             swal({
                 title: "错误",
                 text: "不可为空",
@@ -234,9 +239,8 @@
                 confirmButtonText: "知道了"
             });
         } else {
-            AjaxPostRequest("/Visitor/create/buildName/" + buildName + "/visitorName/" + visitorName + "/otherName/" + otherName + "/cause/" + cause + "/end/" + end);
+            AjaxPostRequest("/Visitor/create/visitorName/" + visitorName + "/otherName/" + otherName + "/cause/" + cause + "/end/" + end);
             $("#CancelButton").click();
-            $("#buildName").val("");
             $("#visitorName").val("");
             $("#otherName").val("");
             $("#cause").val("");

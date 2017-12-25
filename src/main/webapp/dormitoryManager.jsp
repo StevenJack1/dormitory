@@ -32,7 +32,7 @@
                                         <span class="block m-t-xs">
                                         <strong class="font-bold" id="userName"></strong>
                                         </span>
-                                        <span class="text-muted text-xs block">管理员<b class="caret"></b></span>
+                                        <span class="text-muted text-xs block">宿舍管理员<b class="caret"></b></span>
                                     </span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -74,42 +74,54 @@
                 </div>
                 <small class="font-bold">
                     <div class="modal-body" align="center">
-                        <form class="form-horizontal" role="form">
+
+                        <form class="form-horizontal" name="modify" action="/DormitoryAccount/modify" method="post">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label" style="font-size: medium">姓名：</label>
+                                <label class="col-sm-4 control-label" style="font-size: medium">姓名</label>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" placeholder="请输入姓名"
+                                    <input type="text" class="form-control" placeholder="请输入姓名" name="name"
                                            id="name">
                                 </div>
-                            </div><br/>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label" style="font-size: medium">昵称：</label>
+                                <label class="col-sm-4 control-label" style="font-size: medium">年龄</label>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" placeholder="请输入昵称"
-                                           id="nickName">
+                                    <input type="text" class="form-control" placeholder="请输入年龄" name="age"
+                                           id="age">
                                 </div>
-                            </div><br/>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label" style="font-size: medium">联系电话：</label>
+                                <label class="col-sm-4 control-label" style="font-size: medium">所辖宿舍楼</label>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" placeholder="请输入联系电话"
+                                    <input type="text" class="form-control" placeholder="请输入所辖宿舍楼" name="buildName"
+                                           id="buildName">
+                                </div>
+                                <label class="col-sm-4 control-label" style="font-size: medium">籍贯</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" placeholder="请输入籍贯" name="nativePlace"
+                                           id="nativePlace">
+                                </div>
+                                <label class="col-sm-4 control-label" style="font-size: medium">手机号</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" placeholder="请输入手机号" name="phoneNumber"
                                            id="phoneNumber">
                                 </div>
-                            </div><br/>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label" style="font-size: medium">邮箱：</label>
+                                <label class="col-sm-4 control-label" style="font-size: medium">工号</label>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" placeholder="请输入邮箱"
-                                           id="email">
+                                    <input type="text" class="form-control" placeholder="请输入工号" name="studentOrDormitoryNumber"
+                                           id="studentOrDormitoryNumber">
                                 </div>
-                            </div><br/>
+                                <label class="col-sm-4 control-label" style="font-size: medium">性别</label>
+                                <div style="size: 25px" id="sex" class="col-sm-3">
+                                    <input type="radio" name="sex" value="男" checked="checked" style="height: 18px;width: 20px;margin: 10px" onclick="getValue()"/><span style="font-size: 18px">男</span>
+                                    <input type="radio" name="sex" value="女" style="height: 18px;width: 20px;margin: 10px" onclick="getValue()"/><span style="font-size: 18px">女</span>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-white" data-dismiss="modal" id="CancelButton">取消</button>
+                                <button type="button" class="btn btn-primary" id="CreateButton">确认</button>
+                            </div>
+
                         </form>
                     </div>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-white" data-dismiss="modal" id="CancelButton">取消</button>
-                        <button type="button" class="btn btn-primary" id="CreateButton">确认</button>
-                    </div>
+
                 </small>
             </div>
             <small class="font-bold">
@@ -261,35 +273,31 @@
 <%@include file="admin_script.jsp" %>
 <%@include file="admin_footer.jsp" %>
 <script type="text/javascript">
-    $(document).ready(
-        function () {
-            load();
-        });
+    function getValue() {
+        $("#sex").val("");
+        $("input[type='radio'][name='sex']:checked").attr("checked",true);
+        var sex= $("input[type='radio'][name='sex']:checked").val();
+        $("#sex").val(sex);
+    }
+
+    $(document).ready(function () {
+        load();
+    });
     function load(){
         bindRedirect();
         function fillUser(data) {
-            $("#userName").text(data.name);
-            userName=data.userName;
             $("#name").val(data.name);
-            $("#nickName").val(data.nickName);
+            $("#age").val(data.age);
             $("#phoneNumber").val(data.phoneNumber);
-            $("#email").val(data.studentId);
+            $("#buildName").val(data.buildName);
+            $("#nativePlace").val(data.nativePlace);
+            $("#studentOrDormitoryNumber").val(data.studentOrDormitoryNumber);
         }
         $(".li").click(function () {
             $(".active").removeClass("active");
             $(this).addClass("active");
         });
-//        修改个人资料
-        $("#change").click(function () {
-            $("#CreateButton").click(function () {
-                var name=$("#name").val();
-                var  nickName=$("#nickName").val();
-                var  phoneNumber=$("#phoneNumber").val();
-                var  email=$("#email").val();
-                AjaxPutRequest("/AdminAccount/changeInfo/name/"+name+"/nickName/"+nickName+"/phoneNumber/"+phoneNumber+"/email/"+email);
-                $("#CancelButton").click();
-            })
-        });
+
 //        修改密码
         $("#changePassWord").click(function () {
             $("#passWord2").val(null);
@@ -332,12 +340,8 @@
                }
            })
         });
-//        AjaxGetRequest("/UserManagement/UserInfo", fillUser);
+        AjaxGetRequest("/AdminAccount/getInfo", fillUser);
     }
-
-
-
-    
 </script>
 
 </html>

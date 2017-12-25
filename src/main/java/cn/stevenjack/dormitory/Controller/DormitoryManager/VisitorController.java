@@ -1,7 +1,9 @@
 package cn.stevenjack.dormitory.Controller.DormitoryManager;
 
 import cn.stevenjack.dormitory.Model.DormitoryInfo;
+import cn.stevenjack.dormitory.Model.User;
 import cn.stevenjack.dormitory.Model.VisitorsInfo;
+import cn.stevenjack.dormitory.Service.UserInfoService;
 import cn.stevenjack.dormitory.Service.VisitorService;
 import cn.stevenjack.dormitory.Utils.PageResults;
 import org.apache.shiro.authz.annotation.RequiresRoles;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
+import static org.apache.shiro.SecurityUtils.getSubject;
+
 /**
  * Created by StevenJack on 2017/12/25.
  */
@@ -21,6 +25,9 @@ import java.util.Date;
 public class VisitorController {
     @Autowired
     private VisitorService visitorService;
+
+    @Autowired
+    private UserInfoService userInfoService;
 
     @RequiresRoles("dormitoryManager")
     @GetMapping("/")
@@ -31,7 +38,6 @@ public class VisitorController {
 
     /**
      * 存储访客对象
-     * @param buildName
      * @param visitorName
      * @param otherName
      * @param cause
@@ -39,13 +45,14 @@ public class VisitorController {
      * @return
      */
     @RequiresRoles("dormitoryManager")
-    @PostMapping("/create/buildName/{buildName}/visitorName/{visitorName}/otherName/{otherName}/cause/{cause}/end/{end}")
-    public ResponseEntity<Void> createDormitory(@PathVariable String buildName,
-                                                @PathVariable String visitorName,
+    @PostMapping("/create/visitorName/{visitorName}/otherName/{otherName}/cause/{cause}/end/{end}")
+    public ResponseEntity<Void> createDormitory(@PathVariable String visitorName,
                                                 @PathVariable String otherName,
                                                 @PathVariable String cause,
                                                 @PathVariable String end){
-        VisitorsInfo visitorsInfo = new VisitorsInfo(buildName,visitorName,otherName,cause,end);
+        String userName = getSubject().getPrincipal().toString();
+        User user = userInfoService.getById(userName);
+        VisitorsInfo visitorsInfo = new VisitorsInfo(user.getBuildName(),visitorName,otherName,cause,end);
         visitorsInfo.setBegin(new Date());
         visitorService.save(visitorsInfo);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -97,15 +104,13 @@ public class VisitorController {
      * @return
      */
     @RequiresRoles("dormitoryManager")
-    @PostMapping("/modify/visitorInfoId/{visitorInfoId}/modifyBuildName/{modifyBuildName}/modifyVisitorName/{modifyVisitorName}/modifyOtherName/{modifyOtherName}/modifyCause/{modifyCause}/modifyEnd/{modifyEnd}")
+    @PostMapping("/modify/visitorInfoId/{visitorInfoId}/modifyVisitorName/{modifyVisitorName}/modifyOtherName/{modifyOtherName}/modifyCause/{modifyCause}/modifyEnd/{modifyEnd}")
     public ResponseEntity<Void> createDormitory(@PathVariable int visitorInfoId,
-                                                @PathVariable String modifyBuildName,
                                                 @PathVariable String modifyVisitorName,
                                                 @PathVariable String modifyOtherName,
                                                 @PathVariable String modifyCause,
                                                 @PathVariable String modifyEnd){
         VisitorsInfo visitorsInfo = visitorService.getById(visitorInfoId);
-        visitorsInfo.setBuildName(modifyBuildName);
         visitorsInfo.setCause(modifyCause);
         visitorsInfo.setEnd(modifyEnd);
         visitorsInfo.setVisitorName(modifyVisitorName);

@@ -10,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
 
 import static cn.stevenjack.dormitory.Service.UserInfoService.makeSHA256PasswordWithSalt;
 import static cn.stevenjack.dormitory.Utils.SHAUtils.getSHA_256;
@@ -28,7 +28,6 @@ public class AdminAccountController {
     private UserInfoService userInfoService;
 
     //    修改密码
-    @RequiresRoles("admin")
     @PutMapping("/changePassWord/origin/{origin}/passWord/{passWord}")
     public ResponseEntity<Void> changePassWord(@PathVariable String origin,
                                                @PathVariable String passWord){
@@ -49,4 +48,18 @@ public class AdminAccountController {
             }
         }
     }
+
+    /**
+     * 获取个人信息
+     * @return
+     */
+    @ResponseBody
+    @GetMapping("/getInfo")
+    public User getInfo(){
+        String userName = getSubject().getPrincipal().toString();
+        User user=userInfoService.getById(userName);
+        return user;
+    }
+
+
 }

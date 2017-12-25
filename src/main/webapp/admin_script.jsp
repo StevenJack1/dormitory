@@ -12,6 +12,9 @@
 <script src="/assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 <script src="/assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
+
+
+
 <!-- sweet alert -->
 <script src="/assets/plugins/sweetalert/sweetalert.min.js"></script>
 

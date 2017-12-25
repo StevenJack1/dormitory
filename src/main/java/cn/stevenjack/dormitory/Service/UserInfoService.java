@@ -164,4 +164,14 @@ public class UserInfoService extends BaseService<User>{
                 .createTypedQuery()
                 .getResultList();
     }
+
+
+    public PageResults<User> getByRole(@NotNull Role role,
+                                       @NotNull Integer pageNumber,
+                                       @NotNull Integer pageSize){
+        Query query=new Query(entityManager);
+        query.from(User.class)
+                .whereEqual("role",role);
+        return super.getListByPageAndQuery(pageNumber,pageSize,query);
+    }
 }
