@@ -26,4 +26,12 @@ public class ScheduleManagementService extends BaseService<ScheduleInfo>{
                 .setMaxResults(1)
                 .getSingleResult();
     }
+
+    public List<ScheduleInfo> getListByUser(@NotNull User user){
+        Query query=new Query(entityManager);
+        return  query.from(ScheduleInfo.class)
+                .whereEqual("user",user)
+                .createTypedQuery()
+                .getResultList();
+    }
 }

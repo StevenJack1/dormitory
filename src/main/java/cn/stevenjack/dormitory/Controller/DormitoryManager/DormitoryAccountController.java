@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
@@ -26,16 +23,15 @@ public class DormitoryAccountController {
     private UserInfoService userInfoService;
 
     @RequiresRoles("dormitoryManager")
-    @ResponseBody
-    @PostMapping("/modify")
-    public ResponseEntity<Void> modify(@RequestParam("name") String name,
-                                 @RequestParam("age") int age,
-                                 @RequestParam("buildName") String buildName,
-                                 @RequestParam("nativePlace") String nativePlace,
-                                 @RequestParam("phoneNumber") String phoneNumber,
-                                 @RequestParam("studentOrDormitoryNumber") String studentOrDormitoryNumber,
-                                 @RequestParam("sex") String sex,
-                                 HttpSession httpSession) throws Exception {
+    @PostMapping("/modify/name/{name}/age/{age}/phoneNumber/{phoneNumber}/buildName/{buildName}/nativePlace/{nativePlace}/studentOrDormitoryNumber/{studentOrDormitoryNumber}/sex{sex}")
+    public ResponseEntity<Void> modify(@PathVariable String name,
+                                       @PathVariable int age,
+                                       @PathVariable String phoneNumber,
+                                       @PathVariable String buildName,
+                                       @PathVariable String nativePlace,
+                                       @PathVariable String studentOrDormitoryNumber,
+                                       @PathVariable String sex
+                                       ){
         if(name != null && buildName != null && nativePlace != null && phoneNumber != null && studentOrDormitoryNumber != null && sex != null){
             String userName = getSubject().getPrincipal().toString();
             User user=userInfoService.getById(userName);

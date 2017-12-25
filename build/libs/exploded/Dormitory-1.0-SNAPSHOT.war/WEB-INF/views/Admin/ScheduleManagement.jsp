@@ -153,7 +153,7 @@
                     for (var item of e){
                         if (item.workTime == monday){
                             monday_child = item.scheduleStatus;
-                        } else if (item.workTime == tuesday_child){
+                        } else if (item.workTime == tuesday){
                             tuesday_child = item.scheduleStatus;
                         } else if (item.workTime == wednesday){
                             wednesday_child = item.scheduleStatus;
@@ -234,8 +234,8 @@
         var clen = cells.length;
         var currentFirstDate;
         var formatDate = function(date){
-            var year = date.getFullYear()+'年';
-            var month = (date.getMonth()+1)+'月';
+            var year = date.getFullYear()+'-';
+            var month = (date.getMonth()+1)+'-';
             var day = date.getDate();
             var week = '('+['星期天','星期一','星期二','星期三','星期四','星期五','星期六'][date.getDay()]+')';
             var str = year+month+day;

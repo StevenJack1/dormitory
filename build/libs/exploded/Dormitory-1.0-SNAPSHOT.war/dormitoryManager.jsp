@@ -75,7 +75,7 @@
                 <small class="font-bold">
                     <div class="modal-body" align="center">
 
-                        <form class="form-horizontal" name="modify" action="/DormitoryAccount/modify" method="post">
+                        <form class="form-horizontal" name="modify">
                             <div class="form-group">
                                 <label class="col-sm-4 control-label" style="font-size: medium">姓名</label>
                                 <div class="col-sm-6">
@@ -115,13 +115,11 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-white" data-dismiss="modal" id="CancelButton">取消</button>
-                                <button type="button" class="btn btn-primary" id="CreateButton">确认</button>
-                            </div>
+                                <button type="button" class="btn btn-white" data-dismiss="modal" id="CreateButton">确认</button>
 
+                            </div>
                         </form>
                     </div>
-
-
                 </small>
             </div>
             <small class="font-bold">
@@ -296,6 +294,39 @@
         $(".li").click(function () {
             $(".active").removeClass("active");
             $(this).addClass("active");
+        });
+
+        // 修改
+        $("#CreateButton").click(function () {
+            var name = $("#name").val();
+            var age = $("#age").val();
+            var phoneNumber = $("#phoneNumber").val();
+            var buildName = $("#buildName").val();
+            var nativePlace = $("#nativePlace").val();
+            var studentOrDormitoryNumber = $("#studentOrDormitoryNumber").val();
+            var sex = $("#sex").val();
+
+            $.ajax({
+                url: "/DormitoryAccount/modify/"+"/name/"+name+"/age/"+age+"/phoneNumber/"+phoneNumber+"/buildName/"+buildName+"/nativePlace/"+nativePlace+"/studentOrDormitoryNumber/"+studentOrDormitoryNumber+"/sex/"+sex,
+                type: "POST",
+                success: function () {
+                    swal({
+                        title: "修改成功",
+                        text: "修改成功",
+                        type: "success",
+                        confirmButtonText: "知道了"
+                    });
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    swal({
+                        title: "出错了！",
+                        text: "错误信息" + XMLHttpRequest.status,
+                        type: "error",
+                        confirmButtonText: "知道了"
+                    });
+                }
+            });
+            $("#CancelButton").click();
         });
 
 //        修改密码
