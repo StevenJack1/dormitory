@@ -38,13 +38,13 @@
                     <div class="row">
                         <div class=" m-b-xs col-lg-6">
                             <select class="input-sm   " title="请选择来源" id="buildName" onclick="loadPage(1)">
-                                <option value="梅园一号楼">梅园一号楼</option>
-                                <option value="梅园二号楼">梅园二号楼</option>
-                                <option value="梅园三号楼">梅园三号楼</option>
-                                <option value="梅园四号楼">梅园四号楼</option>
-                                <option value="梅园五号楼">梅园五号楼</option>
-                                <option value="梅园六号楼">梅园六号楼</option>
-                                <option value="梅园七号楼">梅园七号楼</option>
+                                <option value="梅一">梅一</option>
+                                <option value="梅二">梅二</option>
+                                <option value="梅三">梅三</option>
+                                <option value="梅四">梅四</option>
+                                <option value="梅五">梅五</option>
+                                <option value="梅六">梅六</option>
+                                <option value="梅七">梅七</option>
                             </select>
 
                         </div>

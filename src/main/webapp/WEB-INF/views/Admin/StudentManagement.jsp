@@ -83,8 +83,13 @@
                             </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">学院</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="请输入学院" name="college"
-                                       id="college">
+                                <select class="input-sm   " title="请选择学院" id="college" style="width: 100%">
+                                    <option value="信息工程学院">信息工程学院</option>
+                                    <option value="化学工程学院">化学工程学院</option>
+                                    <option value="外国语学院">外国语学院</option>
+                                    <option value="理学院">理学院</option>
+                                    <option value="管理学院">管理学院</option>
+                                </select>
                             </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">专业</label>
                             <div class="col-sm-6">
@@ -187,8 +192,13 @@
                             </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">学院</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="请输入学院" name="modifycollege"
-                                       id="modifycollege">
+                                <select class="input-sm   " title="请选择学院" id="modifycollege" style="width: 100%">
+                                    <option value="信息工程学院">信息工程学院</option>
+                                    <option value="化学工程学院">化学工程学院</option>
+                                    <option value="外国语学院">外国语学院</option>
+                                    <option value="理学院">理学院</option>
+                                    <option value="管理学院">管理学院</option>
+                                </select>
                             </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">专业</label>
                             <div class="col-sm-6">
