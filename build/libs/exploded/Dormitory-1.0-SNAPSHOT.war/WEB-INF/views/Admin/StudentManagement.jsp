@@ -67,8 +67,8 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label" style="font-size: medium">用户名</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="请输入用户名" name="userName"
-                                       id="userName">
+                                <input type="text" class="form-control" placeholder="请输入用户名" name="username"
+                                       id="username">
                             </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">姓名</label>
                             <div class="col-sm-6">
@@ -117,13 +117,23 @@
                             </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">宿舍楼</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="请输入宿舍楼" name="buildName"
-                                       id="buildName">
+                                <select class="input-sm   " title="请选择宿舍楼" id="buildName" style="width: 100%">
+                                    <option value="梅一">梅一</option>
+                                    <option value="梅二">梅二</option>
+                                    <option value="梅三">梅三</option>
+                                    <option value="梅四">梅四</option>
+                                    <option value="梅五">梅五</option>
+                                    <option value="梅六">梅六</option>
+                                    <option value="梅七">梅七</option>
+                                </select>
                             </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">宿舍号</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="请输入宿舍号" name="dormitoryName"
-                                       id="dormitoryName">
+                                <select class="input-sm   " title="请选择宿舍号" id="dormitoryName" style="width: 100%">
+                                    <option value="327">327</option>
+                                    <option value="328">328</option>
+                                    <option value="329">329</option>
+                                </select>
                             </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">性别</label>
                             <div style="size: 25px" id="sex" class="col-sm-3">
@@ -164,11 +174,6 @@
 
                     <form class="form-horizontal">
                         <div class="form-group">
-                            <label class="col-sm-4 control-label" style="font-size: medium">用户名</label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="请输入用户名" name="modifyuserName"
-                                       id="modifyuserName">
-                            </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">姓名</label>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control" placeholder="请输入姓名" name="modifyname"
@@ -199,11 +204,6 @@
                                 <input type="text" class="form-control" placeholder="请输入籍贯" name="modifynativePlace"
                                        id="modifynativePlace">
                             </div>
-                            <label class="col-sm-4 control-label" style="font-size: medium">密码</label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="请输入密码" name="modifypassWord"
-                                       id="modifypassWord">
-                            </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">手机号</label>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control" placeholder="请输入手机号" name="modifyphoneNumber"
@@ -216,13 +216,23 @@
                             </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">宿舍楼</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="请输入宿舍楼" name="modifybuildName"
-                                       id="modifybuildName">
+                                <select class="input-sm   " title="请选择宿舍楼" id="modifybuildName" style="width: 100%">
+                                    <option value="梅一">梅一</option>
+                                    <option value="梅二">梅二</option>
+                                    <option value="梅三">梅三</option>
+                                    <option value="梅四">梅四</option>
+                                    <option value="梅五">梅五</option>
+                                    <option value="梅六">梅六</option>
+                                    <option value="梅七">梅七</option>
+                                </select>
                             </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">宿舍号</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="请输入宿舍号" name="modifydormitoryName"
-                                       id="modifydormitoryName">
+                                <select class="input-sm   " title="请选择宿舍号" id="modifydormitoryName" style="width: 100%">
+                                    <option value="327">327</option>
+                                    <option value="328">328</option>
+                                    <option value="329">329</option>
+                                </select>
                             </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">性别</label>
                             <div style="size: 25px" id="modifysex" class="col-sm-3">
@@ -279,6 +289,17 @@
         });
     }
 
+    $(document).ready(function () {
+        var sex= $("input[type='radio'][name='sex']:checked").val();
+        $("#sex").val(sex);
+    });
+    function getValue() {
+        $("#sex").val("");
+        $("input[type='radio'][name='sex']:checked").attr("checked",true);
+        var sex= $("input[type='radio'][name='sex']:checked").val();
+        $("#sex").val(sex);
+    }
+
     //分页加载页面
     var loadPage = function (pageNumber) {
         var uploadTable = function (data) {
@@ -319,9 +340,13 @@
 
     //新增
     $("#CreateButton").click(function () {
-        var sex = $("#sex").val();
+        if ($("#sex").val() == "男"){
+            var sex = true;
+        } else {
+            var sex = false;
+        }
         var data = {
-            userName:$("#userName").val(),
+            userName:$("#username").val(),
             name:$("#name").val(),
             age:$("#age").val(),
             college:$("#college").val(),
@@ -334,7 +359,8 @@
             dormitoryInfo:{
                 buildNumber:$("#buildName").val(),
                 dormitoryNumber:$("#dormitoryName").val()
-            }
+            },
+            sex: sex
         };
         if (isNullOrEmpty(data)) {
             swal({
@@ -344,27 +370,13 @@
                 confirmButtonText: "知道了"
             });
         } else {
-            Post("/StudentManagement/createStudent/sex/" + sex,data);
+            Post("/StudentManagement/createStudent",data);
             $("#CancelButton").click();
-            $("#userName").val("");
-            $("#name").val("")
-            $("#age").val("");
-            $("#college").val("");
-            $("#profession").val("");
-            $("#classNumber").val("");
-            $("#nativePlace").val("");
-            $("#passWord").val("");
-            $("#phoneNumber").val("");
-            $("#studentOrDormitoryNumber").val("");
-            $("#buildName").val("");
-            $("#dormitoryName").val("");
             loadThis();
         }
     });
 
-    //修改
-    $("#modifyCreateButton").click(function () {
-
+    $("#editButton").click(function () {
         var id = $("input[class='checkMe']:checked").attr("id");
         var success = function (data) {
             $("#modifyuserName").val(data.userName);
@@ -374,14 +386,17 @@
             $("#modifyprofession").val(data.profession);
             $("#modifyclassNumber").val(data.classNumber);
             $("#modifynativePlace").val(data.nativePlace);
-            $("#modifypassWord").val(data.passWord);
             $("#modifyphoneNumber").val(data.phoneNumber);
             $("#modifystudentOrDormitoryNumber").val(data.studentOrDormitoryNumber);
-            $("#modifybuildName").val(data.buildName);
-            $("#modifydormitoryName").val(data.dormitoryName);
+            $("#modifybuildName").val(data.dormitoryInfo.buildNumber);
+            $("#modifydormitoryName").val(data.dormitoryInfo.dormitoryNumber);
         };
-        Get("/StudentManagement/id" + id , success);
+        Get("/StudentManagement/getInfo/id/" + id , success);
+    });
 
+    //修改
+    $("#modifyCreateButton").click(function () {
+        var id = $("input[class='checkMe']:checked").attr("id");
         if (isNullOrEmpty(id)) {
             swal({
                 title: "错误",
@@ -390,8 +405,13 @@
                 confirmButtonText: "知道了"
             });
         } else {
-            var sex = $("#modifysex").val();
+            if ($("#sex").val() == "男"){
+                var sex = true;
+            } else {
+                var sex = false;
+            }
             var data = {
+                userName:id,
                 name:$("#modifyname").val(),
                 age:$("#modifyage").val(),
                 college:$("#modifycollege").val(),
@@ -404,13 +424,35 @@
                 dormitoryInfo:{
                     buildNumber:$("#modifybuildName").val(),
                     dormitoryNumber:$("#modifydormitoryName").val()
-                }
-
+                },
+                sex: sex
             };
-            Post("/StudentManagement/modifyStudent/id/" + id + "/sex/" + sex,data);
+            $.ajax({
+                url:"/StudentManagement/modifyStudent",
+                type:"POST",
+                contentType: "application/json",
+                data: JSON.stringify(data),
+                success: function () {
+                    swal({
+                        title: "修改成功",
+                        text: "添加成功",
+                        type: "success",
+                        confirmButtonText: "知道了"
+                    });
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    swal({
+                        title: "出错了！",
+                        text: "错误信息" + XMLHttpRequest.status,
+                        type: "error",
+                        confirmButtonText: "知道了"
+                    });
+                }
+            });
             $("#modifyCancelButton").click();
             loadThis();
         }
+
         setUnAvailable();
     });
 

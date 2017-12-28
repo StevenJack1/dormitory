@@ -44,20 +44,14 @@ public class StudentManagementController {
      * @return
      */
     @ResponseBody
-    @PostMapping("/createStudent/sex/{sex}")
-    public ResponseEntity<Void> create(@PathVariable String sex,
-                                        @RequestBody @Valid User student){
+    @PostMapping("/createStudent")
+    public ResponseEntity<Void> create(@RequestBody @Valid User student){
         student.setDeleted(false);
         student.setPayment(false);
         String password = getSHA_256(student.getPassWord() + student.getUserName());
         student.setPassWord(password);
         student.setDormitoryInfo(dormitoryManagementService.getByBuildNumberAndDormitoryNumber(student.getDormitoryInfo().getBuildNumber(),student.getDormitoryInfo().getDormitoryNumber()));
         student.setRole(Role.student);
-        if (sex.equals("男")){
-            student.setSex(true);
-        } else {
-            student.setSex(false);
-        }
         userInfoService.save(student);
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
@@ -76,6 +70,35 @@ public class StudentManagementController {
         return userInfoService.getByRole(Role.student,pageNumber,pageSize);
     }
 
+    // 获取信息
+    @RequiresRoles("admin")
+    @ResponseBody
+    @GetMapping("/getInfo/id/{id}")
+    public User getInfo(@PathVariable String id){
+        return userInfoService.getById(id);
+    }
+
+    // 修改
+    @ResponseBody
+    @PostMapping("/modifyStudent")
+    public ResponseEntity<Void> modifyStudent(@RequestBody @Valid User student){
+        User user = userInfoService.getById(student.getUserName());
+
+        user.setStudentOrDormitoryNumber(student.getStudentOrDormitoryNumber());
+        user.setAge(student.getAge());
+        user.setNativePlace(student.getNativePlace());
+        user.setPhoneNumber(student.getPhoneNumber());
+        user.setProfession(student.getProfession());
+        user.setClassNumber(student.getClassNumber());
+        user.setCollege(student.getCollege());
+        user.setName(student.getName());
+        user.setSex(student.isSex());
+        user.setDormitoryInfo(dormitoryManagementService.getByBuildNumberAndDormitoryNumber(student.getDormitoryInfo().getBuildNumber(),student.getDormitoryInfo().getDormitoryNumber()));
+
+        userInfoService.saveOrUpdate(user);
+        return new ResponseEntity<Void>(HttpStatus.OK);
+    }
+
     //删除
     @RequiresRoles("admin")
     @DeleteMapping("/deleteStudent/id/{id}")
@@ -86,37 +109,5 @@ public class StudentManagementController {
             userInfoService.deleteById(id);
             return new ResponseEntity<>(HttpStatus.OK);
         }
-    }
-
-    // 获取信息
-    @RequiresRoles("admin")
-    @GetMapping("/getInfo/id/{id}")
-    public User getInfo(@PathVariable String id){
-        return userInfoService.getById(id);
-    }
-
-    // 修改
-    @ResponseBody
-    @PostMapping("/modifyStudent/id/{id}/sex/{sex}")
-    public ResponseEntity<Void> modifyStudent(@PathVariable String id,
-                                                @PathVariable String sex,
-                                                @RequestBody @Valid User student){
-        User user = userInfoService.getById(id);
-        user.setPassWord(getSHA_256(student.getPassWord() + student.getUserName()));
-        user.setStudentOrDormitoryNumber(student.getStudentOrDormitoryNumber());
-        user.setAge(student.getAge());
-        user.setNativePlace(student.getNativePlace());
-        user.setPhoneNumber(student.getPhoneNumber());
-        user.setProfession(student.getProfession());
-        user.setClassNumber(student.getClassNumber());
-        user.setCollege(student.getCollege());
-        user.setName(student.getName());
-        if (sex.equals("男")){
-            user.setSex(true);
-        } else {
-            user.setSex(false);
-        }
-        userInfoService.saveOrUpdate(user);
-        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 }
