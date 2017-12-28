@@ -30,6 +30,7 @@
                                 <th>选择</th>
                                 <th>姓名</th>
                                 <th>性别</th>
+                                <th>学号</th>
                                 <th>年龄</th>
                                 <th>籍贯</th>
                                 <th>联系方式</th>
@@ -322,6 +323,7 @@
                                 `<td>女</td>`
                         )+`
                         <td>`+ e.age +`</td>
+                        <td>`+ e.studentOrDormitoryNumber +`</td>
                         <td>`+ e.nativePlace +`</td>
                         <td>`+ e.phoneNumber +`</td>
                         <td>`+ e.college +`</td>
@@ -372,6 +374,16 @@
         } else {
             Post("/StudentManagement/createStudent",data);
             $("#CancelButton").click();
+            $("#username").val("");
+            $("#name").val("");
+            $("#age").val("");
+            $("#college").val("");
+            $("#profession").val("");
+            $("#classNumber").val("");
+            $("#nativePlace").val("");
+            $("#passWord").val("");
+            $("#phoneNumber").val("");
+            $("#studentOrDormitoryNumber").val("");
             loadThis();
         }
     });

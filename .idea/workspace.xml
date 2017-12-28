@@ -2,44 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98b39f13-49df-47e9-8395-eaef3311de9b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/cn/stevenjack/dormitory/Model/PaymentInfo.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/stevenjack/dormitory/Model/DormitoryInfo.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/stevenjack/dormitory/Model/DormitoryInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/stevenjack/dormitory/Model/ScheduleInfo.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/stevenjack/dormitory/Model/ScheduleInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/stevenjack/dormitory/Model/User.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/stevenjack/dormitory/Model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/stevenjack/dormitory/Model/VisitorsInfo.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/stevenjack/dormitory/Model/VisitorsInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/stevenjack/dormitory/Service/BaseService.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/stevenjack/dormitory/Service/BaseService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/stevenjack/dormitory/Service/UserInfoService.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/stevenjack/dormitory/Service/UserInfoService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/classes/cn/stevenjack/dormitory/Controller/Admin/ScheduleManagementController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/classes/cn/stevenjack/dormitory/Controller/Admin/ScheduleManagementController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/classes/cn/stevenjack/dormitory/Controller/Admin/StudentManagementController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/classes/cn/stevenjack/dormitory/Controller/Admin/StudentManagementController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Gradle___smart_java___Dormitory_1_0_SNAPSHOT_war__exploded_.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Gradle___smart_java___Dormitory_1_0_SNAPSHOT_war__exploded_.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__antlr_antlr_2_7_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__antlr_antlr_2_7_7.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_mchange_c3p0_0_9_5_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_mchange_c3p0_0_9_5_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_mchange_mchange_commons_java_0_2_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_mchange_mchange_commons_java_0_2_11.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_codec_commons_codec_1_10.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_codec_commons_codec_1_10.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_collections_commons_collections_3_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_collections_commons_collections_3_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_logging_commons_logging_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_logging_commons_logging_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__dom4j_dom4j_1_6_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__dom4j_dom4j_1_6_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_servlet_javax_servlet_api_3_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_servlet_javax_servlet_api_3_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_validation_validation_api_1_1_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_validation_validation_api_1_1_0_Final.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__mysql_mysql_connector_java_6_0_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__mysql_mysql_connector_java_6_0_4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_15_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_15_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/dormitory.iml" afterPath="$PROJECT_DIR$/.idea/modules/dormitory.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/dormitory_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/dormitory_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/dormitory_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/dormitory_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagerManagementController.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagerManagementController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/classes/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagerManagementController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/classes/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagerManagementController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/views/Admin/DormitoryManagerManagement.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/views/Admin/DormitoryManagerManagement.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/views/Admin/StudentManagement.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/Dormitory-1.0-SNAPSHOT.war/WEB-INF/views/Admin/StudentManagement.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Controller/Admin/StudentManagementController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Controller/Admin/StudentManagementController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagerManagementController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagerManagementController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/DormitoryManagerManagement.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/DormitoryManagerManagement.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/StudentManagement.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/StudentManagement.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -69,30 +38,13 @@
       <file leaf-file-name="StudentManagement.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/StudentManagement.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+            <state relative-caret-position="350">
+              <caret line="382" column="38" lean-forward="true" selection-start-line="382" selection-start-column="38" selection-end-line="382" selection-end-column="38" />
               <folding>
-                <element signature="n#style#0;n#select#0;n#div#10;n#div#0;n#form#0;n#div#0;n#small#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#11;n#div#0;n#form#0;n#div#0;n#small#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#8;n#div#0;n#form#0;n#div#0;n#small#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#9;n#div#0;n#form#0;n#div#0;n#small#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#10;n#div#0;n#form#0;n#div#0;n#small#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="e#17871#19019#0#HTML" expanded="false" />
-                <element signature="e#19062#19907#0#HTML" expanded="false" />
-                <marker date="1514431921026" expanded="true" signature="16593:17642" ph="..." />
-                <marker date="1514431921026" expanded="true" signature="16622:16869" ph="..." />
-                <marker date="1514431921026" expanded="true" signature="16695:16839" ph="..." />
+                <marker date="1514433332813" expanded="true" signature="16637:17752" ph="..." />
+                <marker date="1514433332813" expanded="true" signature="16666:16913" ph="..." />
+                <marker date="1514433332813" expanded="true" signature="16739:16883" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StudentManagementController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Controller/Admin/StudentManagementController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="101" column="8" lean-forward="true" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="8" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -451,8 +403,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/StudentManagement.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Controller/Admin/StudentManagementController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagerManagementController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/DormitoryManagerManagement.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/StudentManagement.jsp" />
       </list>
     </option>
   </component>
@@ -1066,12 +1020,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1514428211762</updated>
-      <workItem from="1514428213272" duration="3963000" />
+      <workItem from="1514428213272" duration="5112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3963000" />
+    <option name="totallyTimeSpent" value="5112000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1227,27 +1181,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Controller/Admin/StudentManagementController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="101" column="8" lean-forward="true" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="8" />
+        <state relative-caret-position="731">
+          <caret line="111" column="5" lean-forward="true" selection-start-line="40" selection-start-column="3" selection-end-line="111" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/stevenjack/dormitory/Controller/Admin/DormitoryManagerManagementController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="910">
+          <caret line="57" column="7" lean-forward="true" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
+          <folding>
+            <element signature="e#2393#2394#0" expanded="true" />
+            <element signature="e#2443#2444#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/DormitoryManagerManagement.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="319" column="38" lean-forward="true" selection-start-line="319" selection-start-column="38" selection-end-line="319" selection-end-column="38" />
+          <folding>
+            <marker date="1514433323684" expanded="true" signature="13197:14047" ph="..." />
+            <marker date="1514433323684" expanded="true" signature="13226:13473" ph="..." />
+            <marker date="1514433323684" expanded="true" signature="13299:13443" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Admin/StudentManagement.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        <state relative-caret-position="350">
+          <caret line="382" column="38" lean-forward="true" selection-start-line="382" selection-start-column="38" selection-end-line="382" selection-end-column="38" />
           <folding>
-            <element signature="n#style#0;n#select#0;n#div#10;n#div#0;n#form#0;n#div#0;n#small#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#11;n#div#0;n#form#0;n#div#0;n#small#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#8;n#div#0;n#form#0;n#div#0;n#small#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#9;n#div#0;n#form#0;n#div#0;n#small#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#10;n#div#0;n#form#0;n#div#0;n#small#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="e#17871#19019#0#HTML" expanded="false" />
-            <element signature="e#19062#19907#0#HTML" expanded="false" />
-            <marker date="1514431921026" expanded="true" signature="16593:17642" ph="..." />
-            <marker date="1514431921026" expanded="true" signature="16622:16869" ph="..." />
-            <marker date="1514431921026" expanded="true" signature="16695:16839" ph="..." />
+            <marker date="1514433332813" expanded="true" signature="16637:17752" ph="..." />
+            <marker date="1514433332813" expanded="true" signature="16666:16913" ph="..." />
+            <marker date="1514433332813" expanded="true" signature="16739:16883" ph="..." />
           </folding>
         </state>
       </provider>
