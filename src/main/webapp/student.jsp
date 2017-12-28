@@ -32,7 +32,7 @@
                                         <span class="block m-t-xs">
                                         <strong class="font-bold" id="userName"></strong>
                                         </span>
-                                        <span class="text-muted text-xs block">宿舍管理员<b class="caret"></b></span>
+                                        <span class="text-muted text-xs block">学生<b class="caret"></b></span>
                                     </span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">

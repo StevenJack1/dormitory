@@ -41,7 +41,7 @@
              <li>
                 <div>
                     <small>所在宿舍楼</small>
-              
+
                     <h4 style="font-size: 20px">亲爱的<b>`+e.name+`</b>,您好,您在<b>`+e.dormitoryInfo.buildNumber+`</b>号楼<b>`+e.dormitoryInfo.dormitoryNumber+`</b>宿舍</h4>
                     <a href="pin_board.html#"><i class="fa fa-trash-o "></i></a>
                 </div>
