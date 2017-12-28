@@ -173,7 +173,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
                         class="sr-only">Close</span></button>
-                <h4 class="modal-title">创建学生</h4>
+                <h4 class="modal-title">修改信息</h4>
             </div>
             <small class="font-bold">
                 <div class="modal-body" align="center">

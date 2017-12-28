@@ -51,7 +51,7 @@
                     </div>
                 </li>
                 <li class="li">
-                    <a href="#" url="/DormitoryNotice/" class="redirect"><i class="fa fa-home" aria-hidden="true"></i><span class="nav-label">通知公告</span> </a>
+                    <a href="#" url="/StudentNotice/" class="redirect"><i class="fa fa-home" aria-hidden="true"></i><span class="nav-label">通知公告</span> </a>
                 </li>
                 </li>
             </ul>
