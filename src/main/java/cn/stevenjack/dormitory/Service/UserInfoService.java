@@ -1,5 +1,6 @@
 package cn.stevenjack.dormitory.Service;
 
+import cn.stevenjack.dormitory.Model.DormitoryInfo;
 import cn.stevenjack.dormitory.Model.Role;
 import cn.stevenjack.dormitory.Model.User;
 import cn.stevenjack.dormitory.Repository.Query;
@@ -174,4 +175,17 @@ public class UserInfoService extends BaseService<User>{
                 .whereEqual("role",role);
         return super.getListByPageAndQuery(pageNumber,pageSize,query);
     }
+
+    public PageResults<User> getByRoleAndBuildName(@NotNull Role role,
+                                       @NotNull DormitoryInfo dormitoryInfo,
+                                       @NotNull Integer pageNumber,
+                                       @NotNull Integer pageSize){
+        Query query=new Query(entityManager);
+        query.from(User.class)
+                .whereEqual("role",role)
+                .whereEqual("dormitoryInfo",dormitoryInfo);
+        return super.getListByPageAndQuery(pageNumber,pageSize,query);
+    }
+
+
 }

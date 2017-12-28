@@ -44,7 +44,7 @@ public class DormitoryManagerManagementController {
         dormitoryManager.setDeleted(false);
         dormitoryManager.setPayment(false);
         String password = getSHA_256(dormitoryManager.getPassWord() + dormitoryManager.getUserName());
-        dormitoryManager.setPassWord(password);
+        dormitoryManager.setPassWord(getSHA_256(password));
         dormitoryManager.setRole(Role.dormitoryManager);
         userInfoService.save(dormitoryManager);
         return new ResponseEntity<Void>(HttpStatus.OK);

@@ -25,7 +25,7 @@ public class SHAUtilsTest {
         System.out.println(
                 getSHA_256("student" + "student")
         );
-        assertEquals("958d51602bbfbd18b2a084ba848a827c29952bfef170c936419b0922994c0589", sha256);
+        assertEquals("0a83b75732fb39e74753c47712db5e4e5f33d26b62db7170f9cb2851bde2f1e6", sha256);
     }
 
     @Test

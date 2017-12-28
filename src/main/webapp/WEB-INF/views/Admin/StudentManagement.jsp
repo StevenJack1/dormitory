@@ -108,7 +108,7 @@
                             </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">密码</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="请输入密码" name="passWord"
+                                <input type="password" class="form-control" placeholder="请输入密码" name="passWord"
                                        id="passWord">
                             </div>
                             <label class="col-sm-4 control-label" style="font-size: medium">手机号</label>

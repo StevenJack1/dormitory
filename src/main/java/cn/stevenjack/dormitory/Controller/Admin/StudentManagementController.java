@@ -49,7 +49,7 @@ public class StudentManagementController {
         student.setDeleted(false);
         student.setPayment(false);
         String password = getSHA_256(student.getPassWord() + student.getUserName());
-        student.setPassWord(password);
+        student.setPassWord(getSHA_256(password));
         student.setDormitoryInfo(dormitoryManagementService.getByBuildNumberAndDormitoryNumber(student.getDormitoryInfo().getBuildNumber(),student.getDormitoryInfo().getDormitoryNumber()));
         student.setRole(Role.student);
         userInfoService.save(student);
@@ -71,7 +71,6 @@ public class StudentManagementController {
     }
 
     // 获取信息
-    @RequiresRoles("admin")
     @ResponseBody
     @GetMapping("/getInfo/id/{id}")
     public User getInfo(@PathVariable String id){
@@ -100,7 +99,6 @@ public class StudentManagementController {
     }
 
     //删除
-    @RequiresRoles("admin")
     @DeleteMapping("/deleteStudent/id/{id}")
     public ResponseEntity<Void> deleteStudent(@PathVariable String id){
         if(userInfoService.getById(id)==null){
